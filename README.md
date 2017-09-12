@@ -7,4 +7,4 @@ Eliel Lopes //
 Victor Nery  //
 José Alberto //
 José Augusto  //
-Pedro (não paga a disciplina a disciplina) 
+Pedro (não paga a disciplina) 
