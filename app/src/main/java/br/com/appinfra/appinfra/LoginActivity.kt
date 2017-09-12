@@ -12,6 +12,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
     }
 
+
+    // Método de passar tela Loguin para a tela Principal
     fun entrar (view: View) {
         val changePage = Intent(this, PrincipalActivity::class.java)
         startActivity(changePage)

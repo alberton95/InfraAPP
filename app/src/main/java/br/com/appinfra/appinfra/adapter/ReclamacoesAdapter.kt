@@ -36,7 +36,7 @@ class ReclamacoesAdapter(
         return reclamacaos.size
     }
 
-
+    // Montagem da RecyclerView
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var ivImagem: CircleImageView
         var tvEndereco: TextView
@@ -61,6 +61,8 @@ class ReclamacoesAdapter(
             tvBairro.text = reclamacao.bairro
             tvStatus.text = reclamacao.status.toString()
 
+
+            // Checagem de Status - Resolvido ou Pendente
             if(reclamacao.status.equals(false)){
                 tvStatus.text = "Pendente"
                 ivStatus.setImageResource(R.drawable.ic_error)

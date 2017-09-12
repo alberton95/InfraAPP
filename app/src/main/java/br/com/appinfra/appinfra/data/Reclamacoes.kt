@@ -5,6 +5,10 @@ import br.com.appinfra.appinfra.domain.Reclamacao
 
 class Reclamacoes {
     companion object{
+
+
+        // Criação da Lista Estática
+
         fun generateQuestionList() = listOf<Reclamacao>(
             Reclamacao(R.drawable.buraco1, "Rua General Osório", "Centro", "João Pessoa", false),
             Reclamacao(R.drawable.buraco2, "Rua Araújo Amaral", "Cristo", "João Pessoa", false),
