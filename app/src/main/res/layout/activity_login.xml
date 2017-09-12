@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+        tools:context="br.com.appinfra.appinfra.LoginActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="15dp">
+
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/app_name"
+                    android:textStyle="bold"
+                    android:textColor="#FFF"
+                    android:textSize="27sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/slogan"
+                    android:textColor="#FFF"
+                    android:textSize="15sp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:drawableStart="@drawable/ic_profile"
+                    android:drawableLeft="@drawable/ic_profile"
+                    android:id="@+id/editText"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/textUsuario"
+                    android:hint="@string/tvUsuario"
+                    android:textColorHint="@color/textUsuario"
+                    android:background="@color/colorPrimaryDark"
+                    android:padding="10dp" />
+
+                <EditText
+                    android:inputType="textPassword"
+                    android:drawableStart="@drawable/ic_padlock"
+                    android:drawableLeft="@drawable/ic_padlock"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tvSenha"
+                    android:textColor="@color/textSenha"
+                    android:textColorHint="@color/textSenha"
+                    android:background="@color/colorPrimaryDark"
+                    android:padding="10dp"
+                    />
+
+                <Button
+                    android:onClick="entrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btEnviar"
+                    android:text="@string/btEnviar"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@color/btEnviar"
+                    android:textColor="@color/btTextEnviar"
+                    android:layout_marginRight="30dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/esqueceuSenha"
+                        android:textColor="@color/textSenha"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:drawableStart="@drawable/ic_profile"
+                        android:drawableLeft="@drawable/ic_profile"
+                        android:id="@+id/btFacebook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="30dp"
+                        android:onClick="loginFacebook"
+                        android:text="@string/btLoginFacebook"
+                        android:backgroundTint="@color/btFacebook"
+                        android:textColor="@color/btTextEnviar" />
+
+                    <Button
+                        android:drawableStart="@drawable/ic_profile"
+                        android:drawableLeft="@drawable/ic_profile"
+                        android:id="@+id/btGoogle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:text="@string/btLoginGoogle"
+                        android:backgroundTint="@color/btGoogle"
+                        android:textColor="@color/textUsuario"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
