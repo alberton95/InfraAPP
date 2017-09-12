@@ -1,4 +1,4 @@
-InfraAPP- Aplicativo a ser desenvolvido para a disciplina de Desenvolvimento de Aplicações Móveis e Jogos, e Projeto Integrador.  
+InfraAPP- Aplicativo a ser desenvolvido para a disciplina de Programação para Dispositivos Móveis e Sem Fio, e Projeto Integrador.  
 
 Turma: SPI - P5  
 
