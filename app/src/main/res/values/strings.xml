@@ -115,7 +115,8 @@
 
     <!-- Tela de Loguin -->
     <string name="btEnviar">ENTRAR!</string>
-    <string name="btCriarConta">Cadastre-se</string>
+    <string name="btLoguin">Login</string>
+    <string name="btCadastro">Cadastro</string>
     <string name="tvUsuario">Usuário</string>
     <string name="tvSenha">Senha</string>
     <string name="slogan">Faça sua reinvindicação!</string>

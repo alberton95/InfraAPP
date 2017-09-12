@@ -49,6 +49,36 @@
 
             </LinearLayout>
 
+            <TableLayout
+                android:id="@+id/tableLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:stretchColumns="0,1">
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:layout_marginLeft="30dp"
+                        android:text="@string/btLoguin"
+                        android:id="@+id/textView1"
+                        android:layout_column="0">
+                    </Button>
+
+                    <Button
+                        android:text="@string/btCadastro"
+                        android:layout_marginRight="30dp"
+                        android:id="@+id/textView2"
+                        android:layout_column="1">
+                    </Button>
+
+                </TableRow>
+
+            </TableLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,7 +93,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="5dp"
                     android:textColor="@color/textUsuario"
                     android:hint="@string/tvUsuario"
                     android:textColorHint="@color/textUsuario"
@@ -93,7 +123,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btEnviar"
                     android:text="@string/btEnviar"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginLeft="30dp"
                     android:background="@color/btEnviar"
                     android:textColor="@color/btTextEnviar"
@@ -102,7 +132,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
                     <TextView
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="30dp"
@@ -119,22 +149,21 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:drawableStart="@drawable/ic_profile"
-                        android:drawableLeft="@drawable/ic_profile"
+                        android:drawableStart="@drawable/ic_facebook_letter_logo"
+                        android:drawableLeft="@drawable/ic_facebook_letter_logo"
                         android:id="@+id/btFacebook"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
-                        android:layout_marginTop="30dp"
-                        android:onClick="loginFacebook"
+                        android:layout_marginTop="10dp"
                         android:text="@string/btLoginFacebook"
                         android:backgroundTint="@color/btFacebook"
                         android:textColor="@color/btTextEnviar" />
 
                     <Button
-                        android:drawableStart="@drawable/ic_profile"
-                        android:drawableLeft="@drawable/ic_profile"
+                        android:drawableStart="@drawable/ic_google_plus_logo"
+                        android:drawableLeft="@drawable/ic_google_plus_logo"
                         android:id="@+id/btGoogle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
