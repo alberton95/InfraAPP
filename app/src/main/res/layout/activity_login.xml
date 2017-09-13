@@ -69,6 +69,7 @@
                     </Button>
 
                     <Button
+                        android:onClick="telaLogin"
                         android:text="@string/btCadastro"
                         android:layout_marginRight="30dp"
                         android:id="@+id/textView2"

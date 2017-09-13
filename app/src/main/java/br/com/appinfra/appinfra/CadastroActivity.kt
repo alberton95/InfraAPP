@@ -5,26 +5,26 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 
-class LoginActivity : AppCompatActivity() {
+class CadastroActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_cadastro)
     }
 
-
     // Método de passar tela Loguin para a tela Principal
-    fun entrar (view: View) {
+    fun cadastrar (view: View) {
         val changePage = Intent(this, PrincipalActivity::class.java)
         startActivity(changePage)
     }
 
     // Método de passar tela Loguin para a tela Principal
-    fun telaLogin (view: View) {
-        val changePage = Intent(this, CadastroActivity::class.java)
+    fun login (view: View) {
+        val changePage = Intent(this, LoginActivity::class.java)
         startActivity(changePage)
     }
 
 
 
 }
+

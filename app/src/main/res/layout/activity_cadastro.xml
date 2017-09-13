@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="br.com.appinfra.appinfra.CadastroActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="15dp">
+
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/app_name"
+                android:textStyle="bold"
+                android:textColor="#FFF"
+                android:textSize="27sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/slogan"
+                android:textColor="#FFF"
+                android:textSize="15sp"
+                />
+
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/tableLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:stretchColumns="0,1">
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:onClick="login"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/btLoguin"
+                    android:id="@+id/textView1"
+                    android:layout_column="0">
+                </Button>
+
+                <Button
+                    android:text="@string/btCadastro"
+                    android:layout_marginRight="30dp"
+                    android:id="@+id/textView2"
+                    android:layout_column="1">
+                </Button>
+
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:drawableStart="@drawable/ic_profile"
+                android:drawableLeft="@drawable/ic_profile"
+                android:id="@+id/editText"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/textUsuario"
+                android:hint="@string/tvUsuario"
+                android:textColorHint="@color/textUsuario"
+                android:background="@color/colorPrimaryDark"
+                android:padding="10dp" />
+
+            <EditText
+                android:inputType="textPassword"
+                android:drawableStart="@drawable/ic_padlock"
+                android:drawableLeft="@drawable/ic_padlock"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/tvSenha"
+                android:textColor="@color/textSenha"
+                android:textColorHint="@color/textSenha"
+                android:background="@color/colorPrimaryDark"
+                android:padding="10dp"
+                />
+
+            <EditText
+                android:inputType="textPassword"
+                android:drawableStart="@drawable/ic_padlock"
+                android:drawableLeft="@drawable/ic_padlock"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/tvEstado"
+                android:textColor="@color/textSenha"
+                android:textColorHint="@color/textSenha"
+                android:background="@color/colorPrimaryDark"
+                android:padding="10dp"
+                />
+
+            <EditText
+                android:inputType="textPassword"
+                android:drawableStart="@drawable/ic_padlock"
+                android:drawableLeft="@drawable/ic_padlock"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/tvCidade"
+                android:textColor="@color/textSenha"
+                android:textColorHint="@color/textSenha"
+                android:background="@color/colorPrimaryDark"
+                android:padding="10dp"
+                />
+
+            <Button
+                android:onClick="entrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btEnviar"
+                android:text="@string/btEnviar"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="30dp"
+                android:background="@color/btEnviar"
+                android:textColor="@color/btTextEnviar"
+                android:layout_marginRight="30dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
