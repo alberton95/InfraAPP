@@ -6,7 +6,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+        android:background="@color/colorPrimary"
         tools:context="br.com.appinfra.appinfra.LoginActivity">
 
         <LinearLayout
@@ -86,8 +86,8 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:drawableStart="@drawable/ic_profile"
-                    android:drawableLeft="@drawable/ic_profile"
+                    android:drawableStart="@drawable/ic_person"
+                    android:drawableLeft="@drawable/ic_person"
                     android:id="@+id/editText"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
@@ -103,8 +103,8 @@
 
                 <EditText
                     android:inputType="textPassword"
-                    android:drawableStart="@drawable/ic_padlock"
-                    android:drawableLeft="@drawable/ic_padlock"
+                    android:drawableStart="@drawable/ic_lock"
+                    android:drawableLeft="@drawable/ic_lock"
                     android:layout_marginTop="2dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"

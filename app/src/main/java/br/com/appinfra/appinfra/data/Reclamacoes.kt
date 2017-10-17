@@ -1,11 +1,10 @@
 package br.com.appinfra.appinfra.data
 import br.com.appinfra.appinfra.R
-import br.com.appinfra.appinfra.domain.Reclamacao
+import br.com.appinfra.appinfra.models.Reclamacao
 
 
 class Reclamacoes {
     companion object{
-
 
         // Criação da Lista Estática
 

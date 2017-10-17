@@ -1,4 +1,4 @@
-package br.com.appinfra.appinfra.domain
+package br.com.appinfra.appinfra.models
 
 // Classe de Reclamação e Construtor do Objeto
 class Reclamacao(

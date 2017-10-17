@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "635083761368",
+    "firebase_url": "https://infraapp-a9aee.firebaseio.com",
+    "project_id": "infraapp-a9aee",
+    "storage_bucket": "infraapp-a9aee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:635083761368:android:ed5a5ae2ac37c24c",
+        "android_client_info": {
+          "package_name": "br.com.appinfra.appinfra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "635083761368-rchmuv4uiep9ajr60b5tug40lv2437im.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAowVMPpqmp-NkLkGRKAHohA5V1Ubq9qP4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

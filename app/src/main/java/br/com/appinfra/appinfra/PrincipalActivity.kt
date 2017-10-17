@@ -15,7 +15,7 @@ import android.view.Menu
 import android.view.MenuItem
 import br.com.appinfra.appinfra.adapter.ReclamacoesAdapter
 import br.com.appinfra.appinfra.data.Reclamacoes
-import br.com.appinfra.appinfra.domain.Reclamacao
+import br.com.appinfra.appinfra.models.Reclamacao
 import kotlinx.android.synthetic.main.content_principal.*
 
 class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
