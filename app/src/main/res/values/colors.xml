@@ -12,8 +12,8 @@
     <color name="slide_4">#5f7c8b</color>
 
     <!-- Cores do Feed de Reclamações -->
-    <color name="bgLista">#252830</color>
-    <color name="corEndereco">#FFFFFF</color>
+    <color name="bgLista">#e4e4e7</color>
+    <color name="corEndereco">#000000</color>
     <color name="corBairro">#7f8186</color>
     <color name="corCidade">#bec0c4</color>
 
