@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
-        tools:context="br.com.appinfra.appinfra.LoginActivity">
+        tools:context="br.com.appinfra.appinfra.views.LoginActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,7 +69,7 @@
                     </Button>
 
                     <Button
-                        android:onClick="telaLogin"
+                        android:onClick="activityRegister"
                         android:text="@string/btCadastro"
                         android:layout_marginRight="30dp"
                         android:id="@+id/textView2"
@@ -88,7 +88,7 @@
                 <EditText
                     android:drawableStart="@drawable/ic_person"
                     android:drawableLeft="@drawable/ic_person"
-                    android:id="@+id/editText"
+                    android:id="@+id/etUsuario"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:layout_width="match_parent"
@@ -102,6 +102,7 @@
                     android:padding="10dp" />
 
                 <EditText
+                    android:id="@+id/etSenha"
                     android:inputType="textPassword"
                     android:drawableStart="@drawable/ic_lock"
                     android:drawableLeft="@drawable/ic_lock"
@@ -119,7 +120,7 @@
                     />
 
                 <Button
-                    android:onClick="entrar"
+                    android:onClick="auth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/btEnviar"
@@ -142,6 +143,16 @@
                         android:text="@string/esqueceuSenha"
                         android:textColor="@color/textSenha"
                         />
+
+                    <CheckBox
+                        android:checked="true"
+                        android:id="@+id/cbManterConectado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:text="@string/manterConectado"
+                        android:textColor="@color/textSenha" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -166,6 +177,7 @@
                         android:drawableStart="@drawable/ic_google_plus_logo"
                         android:drawableLeft="@drawable/ic_google_plus_logo"
                         android:id="@+id/btGoogle"
+                        android:layout_marginTop="-10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"

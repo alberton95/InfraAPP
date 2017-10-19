@@ -121,8 +121,9 @@
     <string name="tvSenha">Senha</string>
     <string name="tvCidade">Cidade</string>
     <string name="tvEstado">Estado</string>
-    <string name="slogan">Faça sua reinvindicação!</string>
+    <string name="slogan">Registre sua reinvindicação!</string>
     <string name="esqueceuSenha">Esqueceu sua senha?</string>
+    <string name="manterConectado">Manter conectado</string>
     <string name="criarConta">Crie sua conta</string>
     <string name="btLoginGoogle">Entrar com Google+ </string>
     <string name="btLoginFacebook">Entrar com Facebook </string>

@@ -22,7 +22,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".IntroActivity"
+            android:name=".views.IntroActivity"
             android:theme="@style/Theme.Intro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,16 +32,16 @@
         </activity>
 
         <activity
-            android:name=".PrincipalActivity"
+            android:name=".views.PrincipalActivity"
             android:label="@string/title_activity_principal"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".LoginActivity"
+            android:name=".views.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <activity
-            android:name=".CadastroActivity"
+            android:name=".views.CadastroActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

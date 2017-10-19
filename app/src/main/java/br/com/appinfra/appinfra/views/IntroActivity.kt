@@ -1,10 +1,11 @@
-package br.com.appinfra.appinfra
+package br.com.appinfra.appinfra.views
 
 import agency.tango.materialintroscreen.MaterialIntroActivity
 import agency.tango.materialintroscreen.SlideFragmentBuilder
 import android.Manifest
 import android.content.Intent
 import android.os.Bundle
+import br.com.appinfra.appinfra.R
 import br.com.appinfra.appinfra.data.SPInfo
 import br.com.appinfra.appinfra.fragment.TermsConditionsSlide
 
@@ -32,10 +33,10 @@ class IntroActivity : MaterialIntroActivity() {
         addSlide(
             SlideFragmentBuilder()
                 .backgroundColor(R.color.slide_2)
-                .buttonsColor( R.color.slide_button )
+                .buttonsColor(R.color.slide_button)
                 .title( resources.getString(R.string.slide_2_title) )
                 .description( resources.getString(R.string.slide_2_description) )
-                .image( R.drawable.slide_2 )
+                .image(R.drawable.slide_2)
                 .neededPermissions( neededPermissions )
                 .build()
         )
@@ -45,10 +46,10 @@ class IntroActivity : MaterialIntroActivity() {
         addSlide(
             SlideFragmentBuilder()
                 .backgroundColor(R.color.slide_3)
-                .buttonsColor( R.color.slide_button )
+                .buttonsColor(R.color.slide_button)
                 .title( resources.getString(R.string.slide_3_title) )
                 .description( resources.getString(R.string.slide_3_description) )
-                .image( R.drawable.slide_3 )
+                .image(R.drawable.slide_3)
                 .possiblePermissions( possiblePermissions )
                 .build()
         )
@@ -61,7 +62,7 @@ class IntroActivity : MaterialIntroActivity() {
     // Não - Tela de habilitar permissões
     // Sim - Joga para a tela de Loguin
     private fun verificaPermissoes(){
-        if( SPInfo(this).isIntroShown() ){
+        if( SPInfo(this).isIntroShown()){
             startActivity(
                 Intent(this, LoginActivity::class.java)
             )

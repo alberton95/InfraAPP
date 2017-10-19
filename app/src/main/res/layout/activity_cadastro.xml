@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context="br.com.appinfra.appinfra.CadastroActivity">
+    tools:context="br.com.appinfra.appinfra.views.CadastroActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

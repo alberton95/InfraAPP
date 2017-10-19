@@ -1,6 +1,8 @@
-package br.com.appinfra.appinfra
+package br.com.appinfra.appinfra.views
 
+import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
@@ -13,9 +15,11 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import br.com.appinfra.appinfra.R
 import br.com.appinfra.appinfra.adapter.ReclamacoesAdapter
 import br.com.appinfra.appinfra.data.Reclamacoes
-import br.com.appinfra.appinfra.models.Reclamacao
+import br.com.appinfra.appinfra.models.models.beans.Reclamacao
 import kotlinx.android.synthetic.main.content_principal.*
 
 class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -111,5 +115,24 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         val adapter = ReclamacoesAdapter(this, questions)
         rv_questions.adapter = adapter
     }
+
+    fun logout(view: View){
+
+        try {
+            val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+            val editor = preferences.edit()
+            editor.clear()
+            editor.commit()
+            activityLoguin ()
+        }catch (e: Exception){
+        }
+
+    }
+
+    fun activityLoguin () {
+        val changePage = Intent(this, LoginActivity::class.java)
+        startActivity(changePage)
+    }
+
 
 }

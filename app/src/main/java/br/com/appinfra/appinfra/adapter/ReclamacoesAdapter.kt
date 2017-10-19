@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import br.com.appinfra.appinfra.models.models.beans.Reclamacao
 import br.com.appinfra.appinfra.R
-import br.com.appinfra.appinfra.models.Reclamacao
 import de.hdodenhof.circleimageview.CircleImageView
 
 

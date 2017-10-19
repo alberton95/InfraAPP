@@ -17,4 +17,5 @@ class SPInfo(val context : Context) {
     fun isIntroShown() = context
         .getSharedPreferences("PREF", Context.MODE_PRIVATE)
         .getBoolean("status", false)
+
 }

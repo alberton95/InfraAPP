@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/slide_4_background"
     android:orientation="vertical"
-    android:padding="16dp"
-    tools:context="br.com.thiengo.introapitests.Principal">
+    android:padding="16dp">
 
     <TextView
         android:layout_width="match_parent"

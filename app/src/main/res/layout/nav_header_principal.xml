@@ -32,4 +32,12 @@
         android:layout_height="wrap_content"
         android:text="usuario@gmail.com" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/logout"
+        android:textSize="22sp"
+        android:text="SAIR"
+        android:onClick="logout"/>
+
 </LinearLayout>

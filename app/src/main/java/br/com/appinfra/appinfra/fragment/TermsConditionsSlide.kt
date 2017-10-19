@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import br.com.appinfra.appinfra.LoginActivity
+import br.com.appinfra.appinfra.views.LoginActivity
 import br.com.appinfra.appinfra.R
 import br.com.appinfra.appinfra.data.SPInfo
 import kotlinx.android.synthetic.main.fragment_terms_conditions_slide.*
