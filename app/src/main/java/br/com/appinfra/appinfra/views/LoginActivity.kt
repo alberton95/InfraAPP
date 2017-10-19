@@ -13,8 +13,6 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
-
-
 class LoginActivity : AppCompatActivity() {
 
     val progress: ProgressDialog by lazy { ProgressDialog(this) }
