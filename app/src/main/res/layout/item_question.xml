@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     card_view:cardCornerRadius="4dp"
-    android:layout_margin="16dp">
+    android:layout_margin="10dp">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -20,7 +20,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginStart="15dp"
         android:textColor="@color/corEndereco"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/iv_imagem"
         android:layout_toEndOf="@+id/iv_imagem" />
@@ -29,7 +29,7 @@
         android:id="@+id/tv_bairro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:textColor="@color/corBairro"
         android:layout_below="@+id/tv_endereco"
         android:layout_alignLeft="@+id/tv_cidade"

@@ -62,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
                     sharedPref()
                    activityIndex()
                 }else{
-                    showMessage(view,"Informe os dados corretamente ou registre-se!")
+                    showMessage(view,"E-mail ou senha inválidos!")
                 }
             })
         }else{
