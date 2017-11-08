@@ -16,12 +16,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_location_on" />
-        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
-             notification message. See README(https://goo.gl/6BKBk7) for more. -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorPrimaryDark" />
@@ -35,29 +32,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".views.PrincipalActivity"
             android:label="@string/title_activity_principal"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".views.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".views.CadastroActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <service android:name=".models.models.beans.FirebaseServices.myFirebaseIdService" />
-        <service android:name=".models.models.beans.FirebaseServices.myFirebaseMessassingService" >
+        <service android:name=".models.models.beans.FirebaseServices.myFirebaseMessassingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
 
-        <intent-filter>
-            <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-        </intent-filter>
+        <activity android:name=".views.InsertDataActivity" />
 
-            </service>
-        
     </application>
 
 </manifest>

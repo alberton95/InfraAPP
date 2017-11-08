@@ -4,7 +4,7 @@
     <item android:title="Problemas">
     <menu>
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/insertComplaint"
             android:icon="@drawable/ic_menu_camera"
             android:title="Registrar"/>
         <item

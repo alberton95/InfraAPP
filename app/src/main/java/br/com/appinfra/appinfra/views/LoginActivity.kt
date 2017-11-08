@@ -60,7 +60,7 @@ class LoginActivity : AppCompatActivity() {
                     progress.setMessage("Entrando ...")
                     progress.show()
                     sharedPref()
-                   activityIndex()
+                    activityIndex()
                 }else{
                     showMessage(view,"E-mail ou senha inválidos!")
                 }
@@ -87,6 +87,5 @@ class LoginActivity : AppCompatActivity() {
     fun showMessage(view:View, message: String){
         Snackbar.make(view, message, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
     }
-
 }
 

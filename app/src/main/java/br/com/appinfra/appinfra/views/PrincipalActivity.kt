@@ -132,8 +132,8 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         // Handle navigation view item clicks here.
         val id = item.itemId
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
+        if (id == R.id.insertComplaint) {
+            callComplaint()
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -149,6 +149,11 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         val drawer = findViewById(R.id.drawer_layout) as DrawerLayout
         drawer.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun callComplaint() {
+        val changePage = Intent(this, InsertDataActivity::class.java)
+        startActivity(changePage)
     }
 
     private fun initRecycler() {

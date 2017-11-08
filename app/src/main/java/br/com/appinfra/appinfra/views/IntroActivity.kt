@@ -18,7 +18,6 @@ class IntroActivity : MaterialIntroActivity() {
         // Método de Verificar Permissões
         verificaPermissoes()
 
-
         // Método de Transição de Slides
         backButtonTranslationWrapper
             .setEnterTranslation {
