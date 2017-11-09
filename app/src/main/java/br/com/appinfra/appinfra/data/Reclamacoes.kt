@@ -1,7 +1,7 @@
 package br.com.appinfra.appinfra.data
 
 import br.com.appinfra.appinfra.R
-import br.com.appinfra.appinfra.models.models.beans.Reclamacao
+import br.com.appinfra.appinfra.models.models.beans.beans.Reclamacao
 
 class Reclamacoes {
     companion object{

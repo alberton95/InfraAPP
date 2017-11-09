@@ -1,4 +1,4 @@
-package br.com.appinfra.appinfra.models.models.beans
+package br.com.appinfra.appinfra.models.models.beans.beans
 
 class Usuario() {
 

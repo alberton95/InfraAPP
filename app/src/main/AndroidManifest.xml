@@ -50,8 +50,8 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".views.InsertDataActivity" />
-
+        <activity android:name=".views.InsertImageActivity" />
+        <activity android:name=".views.InsertLocationActivity"></activity>
     </application>
 
 </manifest>

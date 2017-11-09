@@ -7,7 +7,6 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.LocationManager
 import android.provider.Settings
-import android.util.Log
 
 /**
  * Created by alber on 08/11/2017.
@@ -30,7 +29,7 @@ class CurrentLatLong {
             val alert = AlertDialog.Builder(mcontext)
             alert.setIcon(android.R.drawable.ic_dialog_alert)
             alert.setTitle("")
-            alert.setMessage("Network_unAvailable")
+            alert.setMessage("Por favor, ative a conexão!")
             alert.setPositiveButton("Ok") { dialog, which -> mcontext?.finish() }
             alert.show()
         }
@@ -51,7 +50,6 @@ class CurrentLatLong {
                     currentLong = gpsTracker!!.getLocation()!!.longitude
 
                     status = 1
-                    Log.d("location status", status.toString() + "")
                 } catch (e: Exception) {
 
                 }
@@ -62,7 +60,7 @@ class CurrentLatLong {
         } else {
             builder.setIcon(android.R.drawable.ic_dialog_alert)
             builder.setTitle("")
-            builder.setMessage("This device does not have GPS feature")
+            builder.setMessage("Seu dispositivo não possui GPS.")
             builder.setPositiveButton("Ok", null)
             builder.show()
         }
@@ -87,7 +85,7 @@ class CurrentLatLong {
         val builder = AlertDialog.Builder(mcontext)
         builder.setIcon(android.R.drawable.ic_dialog_alert)
         builder.setTitle("")
-        builder.setMessage("Please enable your device GPS.")
+        builder.setMessage("Por favor, ative o GPS.")
         builder.setCancelable(false)
         builder.setPositiveButton("Ok") { dialog, which ->
             mcontext?.startActivityForResult(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS), 0)

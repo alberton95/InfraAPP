@@ -28,7 +28,7 @@ import br.com.appinfra.appinfra.R
 import br.com.appinfra.appinfra.adapter.ReclamacoesAdapter
 import br.com.appinfra.appinfra.data.Reclamacoes
 import br.com.appinfra.appinfra.models.models.beans.Config.Config
-import br.com.appinfra.appinfra.models.models.beans.Reclamacao
+import br.com.appinfra.appinfra.models.models.beans.beans.Reclamacao
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.content_principal.*
 
@@ -133,7 +133,7 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         val id = item.itemId
 
         if (id == R.id.insertComplaint) {
-            callComplaint()
+            insertComplaint()
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -151,8 +151,8 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         return true
     }
 
-    private fun callComplaint() {
-        val changePage = Intent(this, InsertDataActivity::class.java)
+    private fun insertComplaint() {
+        val changePage = Intent(this, InsertImageActivity::class.java)
         startActivity(changePage)
     }
 
