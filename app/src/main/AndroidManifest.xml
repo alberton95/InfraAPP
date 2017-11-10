@@ -16,6 +16,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_location_on" />
@@ -51,7 +52,8 @@
         </service>
 
         <activity android:name=".views.InsertImageActivity" />
-        <activity android:name=".views.InsertLocationActivity"></activity>
+        <activity android:name=".views.InsertLocationActivity" />
+        <activity android:name=".views.InsertDescriptionActivity"></activity>
     </application>
 
 </manifest>
