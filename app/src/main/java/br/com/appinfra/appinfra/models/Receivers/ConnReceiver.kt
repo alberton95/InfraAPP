@@ -4,7 +4,6 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
-import android.support.design.widget.Snackbar
 import android.view.View
 
 class ConnReceiver: BroadcastReceiver() {
@@ -16,7 +15,7 @@ class ConnReceiver: BroadcastReceiver() {
         var view: View
 
         if(netInfo != null && netInfo.isConnectedOrConnecting){
-            Snackbar.make(view, "Sem conexão!", Snackbar.LENGTH_LONG).setAction("Action", null).show() }
+            //Snackbar.make(view, "Sem conexão!", Snackbar.LENGTH_LONG).setAction("Action", null).show() }
         }
 
     }
