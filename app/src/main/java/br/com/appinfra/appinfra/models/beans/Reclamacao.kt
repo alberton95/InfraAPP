@@ -7,4 +7,6 @@ class Reclamacao(
         var bairro: String,
         val cidade: String,
         var status: Boolean
-    )
+    ){
+
+}

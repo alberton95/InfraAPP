@@ -1,196 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgLoginAndRegister"
+    tools:context="br.com.appinfra.appinfra.views.LoginActivity">
 
-    <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
-        tools:context="br.com.appinfra.appinfra.views.LoginActivity">
+        android:orientation="vertical"
+        android:background="@drawable/bglogin">
+
+        <TableLayout
+            android:id="@+id/tableLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:stretchColumns="0,1">
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/textView1"
+                    android:layout_column="0"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/btLoguin"></Button>
+
+                <Button
+                    android:id="@+id/textView2"
+                    android:layout_column="1"
+                    android:layout_marginRight="30dp"
+                    android:onClick="activityRegister"
+                    android:text="@string/btCadastro"></Button>
+
+            </TableRow>
+
+        </TableLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:orientation="vertical"
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/app_name"
+                android:textColor="#FFF"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/slogan"
+                android:textColor="#FFF"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/etUsuario"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginTop="15dp">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="5dp"
+                android:drawableLeft="@drawable/ic_person"
+                android:drawableStart="@drawable/ic_person"
+                android:hint="@string/tvUsuario"
+                android:padding="10dp"
+                android:textColor="@color/textUsuario"
+                android:textColorHint="@color/textUsuario" />
 
-                <ImageView
-                    android:layout_marginTop="5dp"
-                    android:layout_gravity="center"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@mipmap/ic_launcher"/>
+            <EditText
+                android:id="@+id/etSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="2dp"
+                android:drawableLeft="@drawable/ic_lock"
+                android:drawableStart="@drawable/ic_lock"
+                android:hint="@string/tvSenha"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColor="@color/textSenha"
+                android:textColorHint="@color/textSenha" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/app_name"
-                    android:textStyle="bold"
-                    android:textColor="#FFF"
-                    android:textSize="27sp"
-                    />
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/esqueceuSenha"
+                    android:textColor="@color/textSenha" />
 
-                <TextView
+                <CheckBox
+                    android:id="@+id/cbManterConectado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/slogan"
-                    android:textColor="#FFF"
-                    android:textSize="15sp"
-                    />
-
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:checked="true"
+                    android:text="@string/manterConectado"
+                    android:textColor="@color/textSenha" />
             </LinearLayout>
 
-            <TableLayout
-                android:id="@+id/tableLayout1"
-                android:layout_width="fill_parent"
+            <Button
+                android:id="@+id/btEnviar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:stretchColumns="0,1">
-
-                <TableRow
-                    android:id="@+id/tableRow1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <Button
-                        android:layout_marginLeft="30dp"
-                        android:text="@string/btLoguin"
-                        android:id="@+id/textView1"
-                        android:layout_column="0">
-                    </Button>
-
-                    <Button
-                        android:onClick="activityRegister"
-                        android:text="@string/btCadastro"
-                        android:layout_marginRight="30dp"
-                        android:id="@+id/textView2"
-                        android:layout_column="1">
-                    </Button>
-
-                </TableRow>
-
-            </TableLayout>
+                android:layout_marginTop="5dp"
+                android:background="@color/btEnviar"
+                android:onClick="auth"
+                android:text="@string/btEnviar"
+                android:textColor="@color/btTextEnviar" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <EditText
-                    android:drawableStart="@drawable/ic_person"
-                    android:drawableLeft="@drawable/ic_person"
-                    android:id="@+id/etUsuario"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
+                <Button
+                    android:id="@+id/btFacebook"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:textColor="@color/textUsuario"
-                    android:hint="@string/tvUsuario"
-                    android:textColorHint="@color/textUsuario"
-                    android:background="@color/colorPrimaryDark"
-                    android:padding="10dp" />
-
-                <EditText
-                    android:id="@+id/etSenha"
-                    android:inputType="textPassword"
-                    android:drawableStart="@drawable/ic_lock"
-                    android:drawableLeft="@drawable/ic_lock"
-                    android:layout_marginTop="2dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
-                    android:layout_gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/tvSenha"
-                    android:textColor="@color/textSenha"
-                    android:textColorHint="@color/textSenha"
-                    android:background="@color/colorPrimaryDark"
-                    android:padding="10dp"
-                    />
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/btFacebook"
+                    android:drawableLeft="@drawable/ic_facebook_letter_logo"
+                    android:drawableStart="@drawable/ic_facebook_letter_logo"
+                    android:text="@string/btLoginFacebook"
+                    android:textColor="@color/btTextEnviar" />
 
                 <Button
-                    android:onClick="auth"
+                    android:id="@+id/btGoogle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/btEnviar"
-                    android:text="@string/btEnviar"
-                    android:layout_marginTop="5dp"
                     android:layout_marginLeft="30dp"
-                    android:background="@color/btEnviar"
-                    android:textColor="@color/btTextEnviar"
-                    android:layout_marginRight="30dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/esqueceuSenha"
-                        android:textColor="@color/textSenha"
-                        />
-
-                    <CheckBox
-                        android:checked="true"
-                        android:id="@+id/cbManterConectado"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="15dp"
-                        android:text="@string/manterConectado"
-                        android:textColor="@color/textSenha" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:drawableStart="@drawable/ic_facebook_letter_logo"
-                        android:drawableLeft="@drawable/ic_facebook_letter_logo"
-                        android:id="@+id/btFacebook"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="30dp"
-                        android:layout_marginTop="10dp"
-                        android:text="@string/btLoginFacebook"
-                        android:backgroundTint="@color/btFacebook"
-                        android:textColor="@color/btTextEnviar" />
-
-                    <Button
-                        android:drawableStart="@drawable/ic_google_plus_logo"
-                        android:drawableLeft="@drawable/ic_google_plus_logo"
-                        android:id="@+id/btGoogle"
-                        android:layout_marginTop="-10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="30dp"
-                        android:text="@string/btLoginGoogle"
-                        android:backgroundTint="@color/btGoogle"
-                        android:textColor="@color/textUsuario"/>
-
-                </LinearLayout>
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="-10dp"
+                    android:backgroundTint="@color/btGoogle"
+                    android:drawableLeft="@drawable/ic_google_plus_logo"
+                    android:drawableStart="@drawable/ic_google_plus_logo"
+                    android:text="@string/btLoginGoogle"
+                    android:textColor="@color/textUsuario" />
 
             </LinearLayout>
 
         </LinearLayout>
 
+    </LinearLayout>
 
-    </ScrollView>
+
+</ScrollView>

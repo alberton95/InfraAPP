@@ -58,7 +58,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btNext"
+            android:id="@+id/btSendComplaint"
             android:layout_marginTop="30dp"
             android:text="ENVIAR! "
             android:onClick="sendComplaint"

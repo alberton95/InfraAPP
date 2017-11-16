@@ -3,7 +3,7 @@
     <!-- Cores Principais -->
     <color name="colorPrimary">#0076b0</color>
     <color name="colorPrimaryDark">#005f8e</color>
-    <color name="colorAccent">#FF5722</color>
+    <color name="colorAccent">#17579e</color>
 
     <!-- Cores do Slide de Permissões -->
     <color name="slide_button">#66000000</color>
@@ -18,7 +18,8 @@
     <color name="corCidade">#bec0c4</color>
 
     <!-- Cores da Tela de Loguin -->
-    <color name="btEnviar">#5da8cc</color>
+    <color name="bgLoginAndRegister">#232323</color>
+    <color name="btEnviar">#17579e</color>
     <color name="btTextEnviar">#FFFFFF</color>
     <color name="textUsuario">#FFF</color>
     <color name="textSenha">#FFF</color>

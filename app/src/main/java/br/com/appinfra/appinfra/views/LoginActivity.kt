@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     // Método de passar tela : Loguin - Cadastro
-    fun activityRegister () {
+    fun activityRegister (v: View) {
         val changePage = Intent(this, CadastroActivity::class.java)
         startActivity(changePage)
     }
@@ -87,5 +87,10 @@ class LoginActivity : AppCompatActivity() {
     fun showMessage(view:View, message: String){
         Snackbar.make(view, message, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
     }
+
+    fun loginFacebook(v: View){
+
+    }
+
 }
 
