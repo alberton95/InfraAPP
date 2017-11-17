@@ -69,7 +69,8 @@
 
         <activity
             android:name=".views.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

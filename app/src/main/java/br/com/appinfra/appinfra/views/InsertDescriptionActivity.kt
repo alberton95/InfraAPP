@@ -25,7 +25,7 @@ class InsertDescriptionActivity : AppCompatActivity() {
             complaint!!.cidade = "Cidade"
             complaint!!.descricao = etDescription.text.toString()
             complaint!!.endereco = "Endereco"
-            complaint!!.imagem = "Cidade"
+            complaint!!.imagem = 10
             complaint!!.status = true
             complaint!!.titulo = etTitle.text.toString()
 

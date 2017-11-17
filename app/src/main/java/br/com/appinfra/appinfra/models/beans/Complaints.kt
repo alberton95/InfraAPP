@@ -9,7 +9,8 @@ class Complaints {
     var cidade: String = ""
     var descricao: String = ""
     var endereco: String = ""
-    var imagem: String = ""
-    var status: Boolean = true
+    var imagem =  10
+    var status: Boolean = false
     var titulo: String = ""
+
 }

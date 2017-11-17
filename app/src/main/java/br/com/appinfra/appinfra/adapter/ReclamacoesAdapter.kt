@@ -1,21 +1,19 @@
 package br.com.appinfra.appinfra.adapter
 
 import android.content.Context
-import android.graphics.Color
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import br.com.appinfra.appinfra.models.models.beans.beans.Reclamacao
 import br.com.appinfra.appinfra.R
+import br.com.appinfra.appinfra.models.beans.Complaint
 import de.hdodenhof.circleimageview.CircleImageView
-
 
 class ReclamacoesAdapter(
         private val context: Context,
-        private val reclamacaos: List<Reclamacao>) :
+        private val reclamacaos: List<Complaint>) :
         RecyclerView.Adapter<ReclamacoesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(
@@ -50,28 +48,28 @@ class ReclamacoesAdapter(
             tvEndereco = itemView.findViewById(R.id.tv_endereco) as TextView
             tvBairro = itemView.findViewById(R.id.tv_bairro) as TextView
             tvCidade = itemView.findViewById(R.id.tv_cidade) as TextView
-            tvStatus = itemView.findViewById(R.id.tv_data) as TextView
+            tvStatus = itemView.findViewById(R.id.tv_status) as TextView
             ivStatus = itemView.findViewById(R.id.ivStatus) as ImageView
         }
 
-        fun setData(reclamacao: Reclamacao) {
-            ivImagem.setImageResource(reclamacao.imagem)
-            tvEndereco.text = reclamacao.endereco
-            tvCidade.text = reclamacao.cidade
-            tvBairro.text = reclamacao.bairro
-            tvStatus.text = reclamacao.status.toString()
+        fun setData(complaint: Complaint) {
+           // ivImagem.setImageResource(complaint.adress)
+            tvEndereco.text = complaint.description
+            tvCidade.text = complaint.adress
+            tvBairro.text = complaint.title
+           // tvStatus.text = complaint.status.toString()
 
 
-            // Checagem de Status - Resolvido ou Pendente
-            if(reclamacao.status.equals(false)){
-                tvStatus.text = "Pendente"
-                ivStatus.setImageResource(R.drawable.ic_error)
-                tvStatus.setTextColor(Color.RED)
-            }else{
-                tvStatus.text = "Resolvido"
-                ivStatus.setImageResource(R.drawable.ic_checked)
-                tvStatus.setTextColor(Color.GREEN)
-            }
+//             Checagem de Status - Resolvido ou Pendente
+//            if(reclamacao.status.equals(false)){
+//                tvStatus.text = "Pendente"
+//                ivStatus.setImageResource(R.drawable.ic_error)
+//                tvStatus.setTextColor(Color.RED)
+//            }else{
+//                tvStatus.text = "Resolvido"
+//                ivStatus.setImageResource(R.drawable.ic_checked)
+//                tvStatus.setTextColor(Color.GREEN)
+//            }
 
         }
     }

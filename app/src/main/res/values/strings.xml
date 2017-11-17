@@ -142,6 +142,7 @@
         completions."
     </string>
     <string name="title_activity_maps">Maps</string>
+    <string name="title_activity_index">IndexActivity</string>
 
 
 </resources>

@@ -26,15 +26,14 @@ import android.view.MenuItem
 import android.view.View
 import br.com.appinfra.appinfra.R
 import br.com.appinfra.appinfra.adapter.ReclamacoesAdapter
-import br.com.appinfra.appinfra.data.Reclamacoes
+import br.com.appinfra.appinfra.models.beans.Complaint
 import br.com.appinfra.appinfra.models.models.beans.Config.Config
-import br.com.appinfra.appinfra.models.models.beans.beans.Reclamacao
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.content_principal.*
 
 class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    val questions = ArrayList<Reclamacao>()
+    val questions = ArrayList<Complaint>()
     var mRegistrationBroadcastReceiver: BroadcastReceiver? = null
 
     override fun onPause() {
@@ -54,15 +53,15 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         mRegistrationBroadcastReceiver = object:BroadcastReceiver(){
             override fun onReceive(context: Context?, intent: Intent) {
-              if(intent.action == Config.STR_PUSH){
-                  val message = intent.getStringExtra("message")
-                  showNotification("InfraAPP", message)
-              }
+                if(intent.action == Config.STR_PUSH){
+                    val message = intent.getStringExtra("message")
+                    showNotification("InfraAPP", message)
+                }
             }
 
         }
 
-        questions.addAll( Reclamacoes.generateQuestionList() )
+       // questions.addAll( Reclamacoes.generateQuestionList() )
         initRecycler()
 
         val toolbar = findViewById(R.id.toolbar) as Toolbar
