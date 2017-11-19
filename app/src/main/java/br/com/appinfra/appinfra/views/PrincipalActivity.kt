@@ -1,5 +1,6 @@
 package br.com.appinfra.appinfra.views
 
+import android.app.Dialog
 import android.app.Notification
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -11,29 +12,38 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.NavigationView
-import android.support.design.widget.Snackbar
 import android.support.v4.content.LocalBroadcastManager
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.app.NotificationCompat
-import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import br.com.appinfra.appinfra.R
-import br.com.appinfra.appinfra.adapter.ReclamacoesAdapter
+import br.com.appinfra.appinfra.adapter.AdapterComplaint
+import br.com.appinfra.appinfra.models.FirebaseServices.FirebaseHelper
 import br.com.appinfra.appinfra.models.beans.Complaint
 import br.com.appinfra.appinfra.models.models.beans.Config.Config
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.content_principal.*
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import java.util.*
 
 class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    val questions = ArrayList<Complaint>()
+    lateinit var db: DatabaseReference
+    lateinit var helper: FirebaseHelper
+    lateinit var adapter: AdapterComplaint
+    lateinit var rv: RecyclerView
+    internal var Complaints = ArrayList<Complaint>()
     var mRegistrationBroadcastReceiver: BroadcastReceiver? = null
 
     override fun onPause() {
@@ -51,6 +61,7 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal2)
 
+        // Initialize Push Notifications Firebase
         mRegistrationBroadcastReceiver = object:BroadcastReceiver(){
             override fun onReceive(context: Context?, intent: Intent) {
                 if(intent.action == Config.STR_PUSH){
@@ -61,17 +72,15 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         }
 
-       // questions.addAll( Reclamacoes.generateQuestionList() )
-        initRecycler()
+        initilizeFirebase()
+        initializeRecyclerView()
+
+        // Action Floating Button
+        val fab = findViewById(R.id.fab) as FloatingActionButton
+        fab.setOnClickListener { displayInputDialog() }
 
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
-
-        val fab = findViewById(R.id.fab) as FloatingActionButton
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
 
         val drawer = findViewById(R.id.drawer_layout) as DrawerLayout
         val toggle = ActionBarDrawerToggle(
@@ -81,6 +90,22 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         val navigationView = findViewById(R.id.nav_view) as NavigationView
         navigationView.setNavigationItemSelectedListener(this)
+    }
+
+    private fun initilizeFirebase() {
+        // Initiliaze Firebase
+        db = FirebaseDatabase.getInstance().reference
+        helper = FirebaseHelper(db)
+    }
+
+    fun initializeRecyclerView() {
+        // Initialize RecyclerView
+        rv = findViewById(R.id.rv_questions) as RecyclerView
+        rv.layoutManager = LinearLayoutManager(this)
+
+        // Initialize Adapter
+        adapter = AdapterComplaint(this, helper.retrieve())
+        rv.adapter = adapter
     }
 
     private fun showNotification(title: String, message: String?) {
@@ -155,17 +180,50 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         startActivity(changePage)
     }
 
-    private fun initRecycler() {
-        rv_questions.setHasFixedSize(true)
+    private fun displayInputDialog() {
 
-        val mLayoutManager = LinearLayoutManager(this)
-        rv_questions.layoutManager = mLayoutManager
+        // Create Dialog
+        val d = Dialog(this)
+        d.setContentView(R.layout.input_dialog)
+        val btSave = d.findViewById(R.id.btSave) as Button
+        val etTitle = d.findViewById(R.id.etTitle) as EditText
+        val etCity = d.findViewById(R.id.etCity) as EditText
+        val etDescription = d.findViewById(R.id.etDescription) as EditText
+        val etNeighborhood = d.findViewById(R.id.etNeighborhood) as EditText
+        val etAdress = d.findViewById(R.id.etAdress) as EditText
 
-        val divider = DividerItemDecoration( this, mLayoutManager.orientation)
-        rv_questions.addItemDecoration(divider)
+        // Action Button Save
+        btSave.setOnClickListener {
+            // Get Data
+            val title = etTitle.text.toString()
+            val city = etCity.text.toString()
+            val desc = etDescription.text.toString()
+            val neighborhood = etNeighborhood.text.toString()
+            val adress = etAdress.text.toString()
 
-        val adapter = ReclamacoesAdapter(this, questions)
-        rv_questions.adapter = adapter
+            // Set Data
+            val s = Complaint()
+            s.title = title
+            s.description = desc
+            s.city = city
+            s.neighborhood = neighborhood
+            s.adress = adress
+            s.status = "true"
+            s.image = "URL DA IMAGEM"
+
+            // Save Data
+            if (title != null && title.length > 0) {
+                if (helper.save(s)!!) {
+                    Toast.makeText(this, "Reclamação enviada com sucesso!", Toast.LENGTH_SHORT).show()
+                    d.hide()
+                    adapter = AdapterComplaint(this, helper.retrieve())
+                    rv.adapter = adapter
+                }
+            } else {
+                Toast.makeText(this, "Preencha os campos!", Toast.LENGTH_SHORT).show()
+            }
+        }
+        d.show()
     }
 
     fun logout(view: View){

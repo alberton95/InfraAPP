@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import br.com.appinfra.appinfra.R
 import br.com.appinfra.appinfra.models.FirebaseServices.ConfiguracaoFirebase
-import br.com.appinfra.appinfra.models.beans.Complaints
+import br.com.appinfra.appinfra.models.beans.Complaint
 import com.google.firebase.database.DatabaseReference
 import kotlinx.android.synthetic.main.activity_insert_description.*
 import java.lang.Exception
@@ -20,24 +20,24 @@ class InsertDescriptionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_insert_description)
 
         btSendComplaint.setOnClickListener {
-            var complaint = Complaints()
-            complaint!!.bairro = "Bairro"
-            complaint!!.cidade = "Cidade"
-            complaint!!.descricao = etDescription.text.toString()
-            complaint!!.endereco = "Endereco"
-            complaint!!.imagem = 10
-            complaint!!.status = true
-            complaint!!.titulo = etTitle.text.toString()
+            var complaint = Complaint()
+            complaint!!.neighborhood = "Bairro"
+            complaint!!.city = "Cidade"
+            complaint!!.description = etDescription.text.toString()
+            complaint!!.adress = "Endereco"
+            complaint!!.image = "10"
+            complaint!!.status = "true"
+            complaint!!.title = etTitle.text.toString()
 
             saveComplaint(complaint)
         }
 
     }
 
-    fun saveComplaint(complaint: Complaints?): Boolean {
+    fun saveComplaint(complaint: Complaint?): Boolean {
         try {
             firebase = ConfiguracaoFirebase.getFirebase()!!.child("list_complaints")
-            firebase!!.child(complaint!!.titulo).setValue(complaint)
+            firebase!!.child(complaint!!.title).setValue(complaint)
             Toast.makeText(this, "Reclamação inserida com sucesso", Toast.LENGTH_LONG).show()
             activityPrincipal()
             return true

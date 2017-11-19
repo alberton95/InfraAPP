@@ -5,7 +5,6 @@ import agency.tango.materialintroscreen.SlideFragmentBuilder
 import android.Manifest
 import android.content.Intent
 import android.os.Bundle
-import br.com.appinfra.appinfra.MainActivity
 import br.com.appinfra.appinfra.R
 import br.com.appinfra.appinfra.data.SPInfo
 import br.com.appinfra.appinfra.fragment.TermsConditionsSlide
@@ -64,7 +63,7 @@ class IntroActivity : MaterialIntroActivity() {
     private fun verificaPermissoes(){
         if( SPInfo(this).isIntroShown()){
             startActivity(
-                Intent(this, MainActivity::class.java)
+                Intent(this, PrincipalActivity::class.java)
             )
             finish()
         }

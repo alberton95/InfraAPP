@@ -2,8 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:paddingTop="50dp">
+    android:id="@+id/input_dialog"
+    android:paddingTop="50dp"
+    tools:context="br.com.appinfra.appinfra.views.PrincipalActivity">
 
     <EditText
         android:id="@+id/etTitle"
@@ -18,7 +21,6 @@
         android:layout_height="wrap_content"
         android:hint="Propellant"
         android:singleLine="true" />
-
 
     <EditText
         android:id="@+id/etCity"
@@ -42,11 +44,12 @@
         android:singleLine="true" />
 
     <Button
-        android:id="@+id/saveBtn"
+        android:id="@+id/btSave"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="@color/colorAccent"
+        android:onClick="send"
         android:clickable="true"
         android:text="Save"
         android:textColor="@android:color/white" />
