@@ -156,6 +156,7 @@
     <string name="hintStreet">Rua</string>
     <string name="hintCity">Cidade</string>
     <string name="hintState">Estado</string>
+    <string name="hintNeighborhood">Bairro</string>
     <string name="descriptionImageInsertLocation">Pressione a imagem para obter sua localização. \n *Certifique-se de estar com Conexão e GPS ativados!</string>
 
     <!-- Activity Insert Image -->

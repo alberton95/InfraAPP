@@ -40,13 +40,15 @@ class InsertLocationActivity : AppCompatActivity() {
                 var getStreetName = etStreetName.text.toString()
                 var getCity = etCity.text.toString()
                 var getState = etState.text.toString()
+                var getNeighborhood = etNeighborhood.text.toString()
 
                 val itSend = Intent(this, InsertImageActivity::class.java)
                 val sendTitle = itSend.putExtra("title", gettitle)
                 val sendDescription = itSend.putExtra("description", getdescription)
                 val sendStreetName = itSend.putExtra("streetName", getStreetName)
                 val sendCity = itSend.putExtra("city", getCity)
-                val state = itSend.putExtra("state", getState)
+                val sendState = itSend.putExtra("state", getState)
+                val sendNeighborhood = itSend.putExtra("neighborhood", getNeighborhood)
                 startActivity(itSend)
             } else {
                 Toast.makeText(this, "Preencha os campos de endereço!", Toast.LENGTH_LONG).show()
@@ -95,11 +97,13 @@ class InsertLocationActivity : AppCompatActivity() {
         // Get Street name, city and state
         val address: String = addresses[0].thoroughfare
         val city: String = addresses[0].locality
+        val neighborhood: String = addresses[0].subLocality
         val state: String = addresses[0].adminArea
 
         etStreetName.setText(address)
         etCity.setText(city)
         etState.setText(state)
+        etNeighborhood.setText(neighborhood)
 
         // You can now create a LatLng Object for use with maps
         val latLng = LatLng(location.getLatitude(), location.getLongitude())

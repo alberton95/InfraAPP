@@ -34,9 +34,10 @@
             android:textSize="12sp" />
 
         <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_gravity="center"
+            android:adjustViewBounds="true"
             android:onClick="getLocation"
             android:src="@drawable/insertlocation" />
 
@@ -59,6 +60,22 @@
             android:layout_marginTop="30dp"
             android:background="@color/colorPrimary"
             android:hint="@string/hintStreet"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/textUsuario"
+            android:textColorHint="@color/textUsuario" />
+
+
+        <EditText
+            android:id="@+id/etNeighborhood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimary"
+            android:hint="@string/hintNeighborhood"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/textUsuario"
@@ -93,6 +110,7 @@
             android:singleLine="true"
             android:textColor="@color/textUsuario"
             android:textColorHint="@color/textUsuario" />
+
 
         <Button
             android:id="@+id/btSendLocation"

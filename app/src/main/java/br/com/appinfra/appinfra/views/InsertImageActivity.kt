@@ -53,13 +53,14 @@ class InsertImageActivity : AppCompatActivity() {
             val city = it.getStringExtra("city")
             val state = it.getStringExtra("state")
             val streetName = it.getStringExtra("streetName")
+            val neighborhood = it.getStringExtra("neighborhood")
 
             // Set Data
             val s = Complaint()
             s.title = title
             s.description = description
             s.city = city
-            s.neighborhood = "Liberdade"
+            s.neighborhood = neighborhood
             s.adress = streetName
             s.status = "true"
             s.image = downloadUrl
