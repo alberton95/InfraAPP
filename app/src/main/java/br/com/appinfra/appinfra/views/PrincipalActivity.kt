@@ -35,7 +35,6 @@ import br.com.appinfra.appinfra.models.models.beans.Config.Config
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import java.util.*
 
 class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -43,7 +42,6 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     lateinit var helper: FirebaseHelper
     lateinit var adapter: AdapterComplaint
     lateinit var rv: RecyclerView
-    internal var Complaints = ArrayList<Complaint>()
     var mRegistrationBroadcastReceiver: BroadcastReceiver? = null
 
     override fun onPause() {
@@ -99,6 +97,7 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     }
 
     fun initializeRecyclerView() {
+
         // Initialize RecyclerView
         rv = findViewById(R.id.rv_questions) as RecyclerView
         rv.layoutManager = LinearLayoutManager(this)
@@ -176,7 +175,7 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     }
 
     private fun insertComplaint() {
-        val changePage = Intent(this, InsertImageActivity::class.java)
+        val changePage = Intent(this, InsertDescriptionActivity::class.java)
         startActivity(changePage)
     }
 
@@ -194,6 +193,7 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         // Action Button Save
         btSave.setOnClickListener {
+
             // Get Data
             val title = etTitle.text.toString()
             val city = etCity.text.toString()

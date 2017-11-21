@@ -63,7 +63,7 @@ class IntroActivity : MaterialIntroActivity() {
     private fun verificaPermissoes(){
         if( SPInfo(this).isIntroShown()){
             startActivity(
-                Intent(this, PrincipalActivity::class.java)
+                Intent(this, LoginActivity::class.java)
             )
             finish()
         }

@@ -19,17 +19,20 @@ class InsertDescriptionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insert_description)
 
-        btSendComplaint.setOnClickListener {
-            var complaint = Complaint()
-            complaint!!.neighborhood = "Bairro"
-            complaint!!.city = "Cidade"
-            complaint!!.description = etDescription.text.toString()
-            complaint!!.adress = "Endereco"
-            complaint!!.image = "10"
-            complaint!!.status = "true"
-            complaint!!.title = etTitle.text.toString()
+        sendDescription.setOnClickListener {
 
-            saveComplaint(complaint)
+            if(etTitle.text.isNotEmpty() && etDescription.text.isNotEmpty()){
+                var title = etTitle.text.toString()
+                var description = etDescription.text.toString()
+
+                val it = Intent(this, InsertLocationActivity::class.java)
+                it.putExtra("title", title)
+                it.putExtra("description", description)
+                startActivity(it)
+            }else{
+                Toast.makeText(this, "Preencha os campos!", Toast.LENGTH_LONG).show()
+            }
+
         }
 
     }
@@ -39,18 +42,13 @@ class InsertDescriptionActivity : AppCompatActivity() {
             firebase = ConfiguracaoFirebase.getFirebase()!!.child("list_complaints")
             firebase!!.child(complaint!!.title).setValue(complaint)
             Toast.makeText(this, "Reclamação inserida com sucesso", Toast.LENGTH_LONG).show()
-            activityPrincipal()
+            // activityPrincipal()
             return true
         } catch (e: Exception) {
             e.printStackTrace()
             return false
         }
 
-    }
-
-    fun activityPrincipal(){
-        val changePage = Intent(this@InsertDescriptionActivity, PrincipalActivity::class.java)
-        startActivity(changePage)
     }
 
 }

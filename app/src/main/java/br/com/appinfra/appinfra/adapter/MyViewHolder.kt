@@ -13,12 +13,16 @@ class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var tvCity: TextView
     var tvNeighborhood: TextView
     var ivResult: ImageView
-    var tvStatus: String = ""
+    var tvStatus: TextView
+    var tvImage: String = ""
+    var ivStatus: ImageView
 
     init {
         tvTitle = itemView.findViewById(R.id.tv_cidade) as TextView
         tvCity = itemView.findViewById(R.id.tv_endereco) as TextView
         tvNeighborhood = itemView.findViewById(R.id.tv_bairro) as TextView
         ivResult = itemView.findViewById(R.id.iv_imagem) as ImageView
+        tvStatus = itemView.findViewById(R.id.tv_status) as TextView
+        ivStatus = itemView.findViewById(R.id.ivStatus) as ImageView
     }
 }

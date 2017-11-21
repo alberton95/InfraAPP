@@ -144,5 +144,23 @@
     <string name="title_activity_maps">Maps</string>
     <string name="title_activity_index">IndexActivity</string>
 
+    <!-- Activity Insert Descriptions -->
+    <string name="titleInsertDescriptions">Inicie!</string>
+    <string name="descriptionInsertDescriptions">Insira descrições da reclamação</string>
+    <string name="hintDescription">Descrição</string>
+    <string name="hintTitle">Título</string>
+
+    <!-- Activity Insert Location -->
+    <string name="titleInsertLocation">Quase lá!</string>
+    <string name="descriptionInsertLocation">Insira a localização da reclamação</string>
+    <string name="hintStreet">Rua</string>
+    <string name="hintCity">Cidade</string>
+    <string name="hintState">Estado</string>
+    <string name="descriptionImageInsertLocation">Pressione a imagem para obter sua localização. \n *Certifique-se de estar com Conexão e GPS ativados!</string>
+
+    <!-- Activity Insert Image -->
+    <string name="titleFinal">Finalize!</string>
+    <string name="descriptionInsertImage">Insira uma imagem da reclamação</string>
+    <string name="nextStep">Prosseguir</string>
 
 </resources>

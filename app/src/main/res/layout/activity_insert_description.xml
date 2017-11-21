@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="QUASE LÁ!"
+            android:text="@string/titleInsertDescriptions"
             android:textStyle="bold"
             android:textSize="24sp"
             android:layout_marginTop="20dp"
@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Insira as descrições."
+            android:text="@string/descriptionInsertDescriptions"
             android:textColor="#FFF"
             android:textSize="12sp"
             android:layout_gravity="center"/>
@@ -40,28 +40,42 @@
             android:src="@drawable/insertext" />
 
         <EditText
+            android:layout_marginTop="30dp"
+            android:id="@+id/etTitle"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="DIGITE O TITULO"
-            android:textColorHint="#FFF"
-            android:textColor="#FFF"
-            android:id="@+id/etTitle"/>
+            android:layout_gravity="center"
+            android:textColor="@color/textUsuario"
+            android:singleLine="true"
+            android:hint="@string/hintTitle"
+            android:textColorHint="@color/textUsuario"
+            android:background="@color/colorPrimary"
+            android:padding="10dp" />
 
         <EditText
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="DIGITE A DESCRIÇÃO!"
-            android:textColorHint="#FFF"
-            android:textColor="#FFF"
-            android:id="@+id/etDescription"/>
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/textUsuario"
+            android:singleLine="true"
+            android:hint="@string/hintDescription"
+            android:id="@+id/etDescription"
+            android:textColorHint="@color/textUsuario"
+            android:background="@color/colorPrimary"
+            android:padding="10dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btSendComplaint"
+            android:id="@+id/sendDescription"
             android:layout_marginTop="30dp"
-            android:text="ENVIAR! "
-            android:onClick="sendComplaint"
+            android:text="@string/nextStep"
+            android:onClick="sendText"
             android:layout_gravity="center"/>
 
     </LinearLayout>

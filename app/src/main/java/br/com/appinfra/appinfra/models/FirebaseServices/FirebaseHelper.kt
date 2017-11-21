@@ -31,7 +31,7 @@ class FirebaseHelper(internal var db: DatabaseReference) {
     }
 
     //IMPLEMENT FETCH DATA AND FILL ARRAYLIST
-    fun fetchData(dataSnapshot: DataSnapshot) {
+    fun fetchData(dataSnapshot: DataSnapshot): ArrayList<Complaint> {
         Complaints.clear()
         for (ds in dataSnapshot.children) {
             val Complaint = ds.getValue(Complaint::class.java)
@@ -39,7 +39,10 @@ class FirebaseHelper(internal var db: DatabaseReference) {
                 Complaints.add(Complaint)
             }
         }
+        return Complaints
     }
+
+
 
     //READ BY HOOKING ONTO DATABASE OPERATION CALLBACKS
     fun retrieve(): ArrayList<Complaint> {
@@ -54,12 +57,18 @@ class FirebaseHelper(internal var db: DatabaseReference) {
                 fetchData(dataSnapshot)
             }
 
-            override fun onChildRemoved(dataSnapshot: DataSnapshot) {}
-            override fun onChildMoved(dataSnapshot: DataSnapshot, s: String?) {}
+            override fun onChildRemoved(dataSnapshot: DataSnapshot) {
+                fetchData(dataSnapshot)
+            }
+            override fun onChildMoved(dataSnapshot: DataSnapshot, s: String?) {
+                fetchData(dataSnapshot)
+            }
             override fun onCancelled(databaseError: DatabaseError) {}
         })
 
         return Complaints
     }
+
+
 
 }

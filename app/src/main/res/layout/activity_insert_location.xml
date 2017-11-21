@@ -4,67 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
     tools:context="br.com.appinfra.appinfra.views.InsertLocationActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="QUASE LÁ!"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:layout_marginTop="20dp"
-        android:textColor="#FFF"
-        android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/titleInsertLocation"
+            android:id="@+id/tvTeste"
+            android:textColor="#FFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Insira a localização."
-        android:textColor="#FFF"
-        android:textSize="12sp"
-        android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/descriptionInsertLocation"
+            android:textColor="#FFF"
+            android:textSize="12sp" />
 
-    <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_gravity="center"
-        android:src="@drawable/insertlocation"
-        android:onClick="getLocation"/>
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:onClick="getLocation"
+            android:src="@drawable/insertlocation" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:id="@+id/tvLocationCurrent"
-        android:textColor="#FFF"
-        android:layout_marginTop="30dp"
-        android:textSize="14sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/descriptionImageInsertLocation"
+            android:textAlignment="center"
+            android:textColor="#FFF"
+            android:textSize="10sp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="#FFF"
-        android:id="@+id/tvResultLatLong"
-        android:textSize="14sp"/>
+        <EditText
+            android:id="@+id/etStreetName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorPrimary"
+            android:hint="@string/hintStreet"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/textUsuario"
+            android:textColorHint="@color/textUsuario" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btNext"
-        android:onClick="sendLocation"
-        android:layout_marginTop="100dp"
-        android:text="PROSSEGUIR >>"
-        android:layout_gravity="center"
-        />
+        <EditText
+            android:id="@+id/etCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimary"
+            android:hint="@string/hintCity"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/textUsuario"
+            android:textColorHint="@color/textUsuario" />
+
+        <EditText
+            android:id="@+id/etState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimary"
+            android:hint="@string/hintState"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/textUsuario"
+            android:textColorHint="@color/textUsuario" />
+
+        <Button
+            android:id="@+id/btSendLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:onClick="sendLocation"
+            android:text="PROSSEGUIR >>" />
 
     </LinearLayout>
 </LinearLayout>

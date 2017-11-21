@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:text="Vamos lá!"
+            android:text="@string/titleFinal"
             android:textColor="#FFF"
             android:textStyle="bold"
             android:textSize="24sp" />
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Insira imagens da reclamação."
+            android:text="@string/descriptionInsertImage"
             android:textColor="#FFF"
             android:textSize="12sp" />
 
@@ -39,16 +39,17 @@
             android:orientation="horizontal"
             android:gravity="center">
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="20dp"
-            android:onClick="callCamera"
-            android:src="@drawable/insertimage" />
+        <!--<ImageView-->
+            <!--android:layout_width="80dp"-->
+            <!--android:layout_height="80dp"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:onClick="callCamera"-->
+            <!--android:src="@drawable/insertimage" />-->
 
         <ImageView
             android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
             android:layout_marginTop="20dp"
             android:onClick="callGallery"
             android:src="@drawable/insertimage" />
@@ -63,13 +64,13 @@
             android:layout_marginTop="10dp" />
 
         <Button
-            android:id="@+id/btNext"
+            android:id="@+id/btSendComplaint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:onClick="sendImage"
-            android:text="PROSSEGUIR >>" />
+            android:text="ENVIAR!" />
 
     </LinearLayout>
 </LinearLayout>
