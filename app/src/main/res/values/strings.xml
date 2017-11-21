@@ -117,10 +117,9 @@
     <string name="btEnviar">ENTRAR!</string>
     <string name="btLoguin">Login</string>
     <string name="btCadastro">Cadastro</string>
-    <string name="tvUsuario">Usuário</string>
-    <string name="tvSenha">Senha</string>
-    <string name="tvCidade">Cidade</string>
-    <string name="tvEstado">Estado</string>
+    <string name="etUser">Usuário</string>
+    <string name="etPassword">Senha</string>
+    <string name="etName">Nome</string>
     <string name="slogan">Registre sua reinvindicação!</string>
     <string name="esqueceuSenha">Esqueceu sua senha?</string>
     <string name="manterConectado">Manter conectado</string>

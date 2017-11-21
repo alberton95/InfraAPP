@@ -90,7 +90,7 @@
                 android:layout_marginTop="5dp"
                 android:drawableLeft="@drawable/ic_person"
                 android:drawableStart="@drawable/ic_person"
-                android:hint="@string/tvUsuario"
+                android:hint="@string/etUser"
                 android:padding="10dp"
                 android:textColor="@color/textUsuario"
                 android:textColorHint="@color/textUsuario" />
@@ -105,7 +105,7 @@
                 android:layout_marginTop="2dp"
                 android:drawableLeft="@drawable/ic_lock"
                 android:drawableStart="@drawable/ic_lock"
-                android:hint="@string/tvSenha"
+                android:hint="@string/etPassword"
                 android:inputType="textPassword"
                 android:padding="10dp"
                 android:textColor="@color/textSenha"

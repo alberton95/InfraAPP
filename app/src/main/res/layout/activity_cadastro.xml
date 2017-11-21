@@ -96,7 +96,7 @@
                 android:layout_marginTop="5dp"
                 android:textColor="@color/textUsuario"
                 android:singleLine="true"
-                android:hint="@string/tvUsuario"
+                android:hint="@string/etUser"
                 android:textColorHint="@color/textUsuario"
                 android:background="@color/colorPrimaryDark"
                 android:padding="10dp" />
@@ -112,7 +112,7 @@
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/tvSenha"
+                android:hint="@string/etPassword"
                 android:textColor="@color/textSenha"
                 android:textColorHint="@color/textSenha"
                 android:background="@color/colorPrimaryDark"
@@ -121,8 +121,8 @@
 
             <EditText
                 android:inputType="textPassword"
-                android:drawableStart="@drawable/ic_location_on"
-                android:drawableLeft="@drawable/ic_lock"
+                android:drawableStart="@drawable/ic_finish"
+                android:drawableLeft="@drawable/ic_finish"
                 android:layout_marginTop="2dp"
                 android:singleLine="true"
                 android:layout_marginLeft="30dp"
@@ -130,25 +130,7 @@
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/tvEstado"
-                android:textColor="@color/textSenha"
-                android:textColorHint="@color/textSenha"
-                android:background="@color/colorPrimaryDark"
-                android:padding="10dp"
-                />
-
-            <EditText
-                android:inputType="textPassword"
-                android:drawableStart="@drawable/ic_my_location"
-                android:drawableLeft="@drawable/ic_my_location"
-                android:layout_marginTop="2dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:hint="@string/tvCidade"
+                android:hint="@string/etName"
                 android:textColor="@color/textSenha"
                 android:textColorHint="@color/textSenha"
                 android:background="@color/colorPrimaryDark"
@@ -156,7 +138,6 @@
                 />
 
             <Button
-                android:onClick="entrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btEnviar"
@@ -166,16 +147,6 @@
                 android:background="@color/btEnviar"
                 android:textColor="@color/btTextEnviar"
                 android:layout_marginRight="30dp"/>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-
-
-            </LinearLayout>
 
         </LinearLayout>
 

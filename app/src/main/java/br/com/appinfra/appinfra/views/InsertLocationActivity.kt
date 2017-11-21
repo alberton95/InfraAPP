@@ -112,8 +112,6 @@ class InsertLocationActivity : AppCompatActivity() {
 
     fun sendLocation(v: View) {
         val changePage = Intent(this@InsertLocationActivity, InsertDescriptionActivity::class.java)
-//        changePage.putExtra("name", title)
-//        changePage.putExtra("description", description)
         startActivity(changePage)
     }
 

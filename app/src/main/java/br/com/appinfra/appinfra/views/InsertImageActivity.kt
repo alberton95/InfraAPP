@@ -21,7 +21,6 @@ import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_insert_image.*
 import java.util.*
 
-
 class InsertImageActivity : AppCompatActivity() {
 
     val CAMERA = 1

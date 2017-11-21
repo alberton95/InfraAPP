@@ -114,11 +114,14 @@
 
         <Button
             android:id="@+id/btSendLocation"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:onClick="sendLocation"
+            android:padding="10dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/btTextEnviar"
             android:text="PROSSEGUIR >>" />
 
     </LinearLayout>

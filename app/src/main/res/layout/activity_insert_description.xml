@@ -70,12 +70,14 @@
             android:padding="10dp" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/sendDescription"
             android:layout_marginTop="30dp"
             android:text="@string/nextStep"
-            android:onClick="sendText"
+            android:padding="10dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/btTextEnviar"
             android:layout_gravity="center"/>
 
     </LinearLayout>
