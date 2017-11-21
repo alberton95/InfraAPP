@@ -21,7 +21,7 @@ class AdapterComplaint(internal var c: Context, internal var complaints: ArrayLi
 
     // Set Values from Data Firebase
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.tvTitle.text = complaints[position].adress
+        holder.tvTitle.text = complaints[position].adress + ", " + complaints[position].neighborhood + ", " + complaints[position].city
         holder.tvCity.text = complaints[position].title
         holder.tvNeighborhood.text = complaints[position].description
         holder.tvImage = complaints[position].image

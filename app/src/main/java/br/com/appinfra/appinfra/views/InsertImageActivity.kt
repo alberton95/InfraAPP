@@ -70,9 +70,9 @@ class InsertImageActivity : AppCompatActivity() {
             // Save Data
             if (s != null) {
                 if (helper.save(s)!!) {
-                    Toast.makeText(this, "Reclamação enviada com sucesso!", Toast.LENGTH_SHORT).show()
                     val changePage = Intent(this, PrincipalActivity::class.java)
                     startActivity(changePage)
+                    Toast.makeText(this, "Reclamação enviada com sucesso!", Toast.LENGTH_LONG).show()
                 }
             } else {
                 Toast.makeText(this, "Algo deu errado!", Toast.LENGTH_SHORT).show()
@@ -133,14 +133,13 @@ class InsertImageActivity : AppCompatActivity() {
 
         if (filePath != null) {
             val progressDialog = ProgressDialog(this)
-            progressDialog.setTitle("Carregando...")
+            progressDialog.setTitle("Carregando imagem...")
             progressDialog.show()
 
             val imageRef = storageReference!!.child("images/" + UUID.randomUUID().toString())
             imageRef.putFile(filePath)
                     .addOnSuccessListener {
                         progressDialog.dismiss()
-                        Toast.makeText(applicationContext, "Imagem enviada!", Toast.LENGTH_LONG).show()
                     }
                     .addOnFailureListener {
                         progressDialog.dismiss()
@@ -148,7 +147,7 @@ class InsertImageActivity : AppCompatActivity() {
                     }
                     .addOnProgressListener { taskSnapshot ->
                         val progress = 100.0 * taskSnapshot.bytesTransferred / taskSnapshot.totalByteCount
-                        progressDialog.setMessage("Enviando: " + progress.toInt() + " %...")
+                        progressDialog.setMessage("Progresso: " + progress.toInt() + " %...")
                         progressDialog.setCancelable(false)
                         progressDialog.setCanceledOnTouchOutside(false)
                         downloadUrl = taskSnapshot.downloadUrl.toString()
