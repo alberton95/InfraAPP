@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
         // other setup code
         val mPrefs = PreferenceManager.getDefaultSharedPreferences(this)
         if (mPrefs.getBoolean("conectado", false)) {
-            val i = Intent(this, PrincipalActivity::class.java)
+            val i = Intent(this, MapsActivity::class.java)
             startActivity(i)
         } else {
         }
@@ -88,9 +88,6 @@ class LoginActivity : AppCompatActivity() {
         Snackbar.make(view, message, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
     }
 
-    fun loginFacebook(v: View){
-
-    }
 
 }
 

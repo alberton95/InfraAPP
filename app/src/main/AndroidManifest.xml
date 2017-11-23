@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".models.FirebaseServices.MApplication"
+        android:name=".models.FirebaseServices.PersistenceCache"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -75,7 +75,8 @@
 
         <activity
             android:name=".views.MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

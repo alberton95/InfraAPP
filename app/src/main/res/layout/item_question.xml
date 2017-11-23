@@ -57,6 +57,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:text="TESTE"
+            android:textStyle="bold"
             android:textSize="8sp" />
 
         <ImageView
@@ -77,6 +78,7 @@
             android:layout_below="@+id/iv_imagem"
             android:layout_marginTop="16dp"
             android:text="TESTE"
+            android:textStyle="bold"
             android:textColor="@color/corEndereco"
             android:textSize="16sp" />
 

@@ -1,8 +1,133 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.appinfra.appinfra.views.MapsActivity" />
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    tools:context="br.com.appinfra.appinfra.views.MapsActivity">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTeste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/titleInsertLocation"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/descriptionInsertLocation"
+                android:textColor="#FFF"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:onClick="getLocation"
+                android:src="@drawable/insertlocation" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/descriptionImageInsertLocation"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="10sp" />
+
+            <EditText
+                android:id="@+id/etStreetName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorPrimary"
+                android:hint="@string/hintStreet"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="@color/textUsuario"
+                android:textColorHint="@color/textUsuario" />
+
+
+            <EditText
+                android:id="@+id/etNeighborhood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorPrimary"
+                android:hint="@string/hintNeighborhood"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="@color/textUsuario"
+                android:textColorHint="@color/textUsuario" />
+
+            <EditText
+                android:id="@+id/etCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorPrimary"
+                android:hint="@string/hintCity"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="@color/textUsuario"
+                android:textColorHint="@color/textUsuario" />
+
+            <EditText
+                android:id="@+id/etState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorPrimary"
+                android:hint="@string/hintState"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="@color/textUsuario"
+                android:textColorHint="@color/textUsuario" />
+
+            <Button
+                android:id="@+id/btSendLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
+                android:onClick="sendLocation"
+                android:padding="10dp"
+                android:text="PROSSEGUIR >>"
+                android:textColor="@color/btTextEnviar" />
+
+        </LinearLayout>
+</LinearLayout>

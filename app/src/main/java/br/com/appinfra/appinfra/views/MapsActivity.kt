@@ -13,6 +13,8 @@ import com.google.android.gms.maps.model.MarkerOptions
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
+    private val UPDATE_INTERVAL = (10 * 1000).toLong()  /* 10 secs */
+    private val FASTEST_INTERVAL: Long = 20000000 /* 2 sec */
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,8 +38,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-7.1208579, -34.9736898)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val location = LatLng(-7.1208579, -34.9736898)
+        mMap.addMarker(MarkerOptions().position(location).title("Sua localização"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(location))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 18.5f))
     }
 }

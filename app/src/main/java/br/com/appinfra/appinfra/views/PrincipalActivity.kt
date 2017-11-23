@@ -92,14 +92,13 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         val swiperefesh = findViewById(R.id.swiperefresh) as SwipeRefreshLayout
 
-        swiperefresh.setOnRefreshListener( object: SwipeRefreshLayout.OnRefreshListener{
-        override fun onRefresh() {
-            refreshDataFirebase()
-            swiperefesh.setRefreshing(false);
+        swiperefresh.setOnRefreshListener(object : SwipeRefreshLayout.OnRefreshListener {
+            override fun onRefresh() {
+                refreshDataFirebase()
+                swiperefesh.setRefreshing(false);
+            }
         }
-    }
-);
-
+        );
     }
 
     private fun initilizeFirebase() {
@@ -117,7 +116,7 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
     }
 
-    fun refreshDataFirebase(){
+    fun refreshDataFirebase() {
         // Refresh Data Firease and Initialize Adapter
         adapter = AdapterComplaint(this, helper.retrieve())
         rv.adapter = adapter
