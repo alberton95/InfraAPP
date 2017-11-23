@@ -17,7 +17,6 @@ import com.google.android.gms.maps.model.LatLng
 import kotlinx.android.synthetic.main.activity_insert_location.*
 import java.util.*
 
-
 class InsertLocationActivity : AppCompatActivity() {
 
     private val UPDATE_INTERVAL = (10 * 1000).toLong()  /* 10 secs */
@@ -88,25 +87,31 @@ class InsertLocationActivity : AppCompatActivity() {
 
     fun onLocationChanged(location: Location) {
 
-        val geocoder: Geocoder
-        val addresses: List<Address>
-        geocoder = Geocoder(this, Locale.getDefault())
+        try{
+            val geocoder: Geocoder
+            val addresses: List<Address>
+            geocoder = Geocoder(this, Locale.getDefault())
 
-        addresses = geocoder.getFromLocation(location.latitude, location.longitude, 1)
+            addresses = geocoder.getFromLocation(location.latitude, location.longitude, 1)
 
-        // Get Street name, city and state
-        val address: String = addresses[0].thoroughfare
-        val city: String = addresses[0].locality
-        val neighborhood: String = addresses[0].subLocality
-        val state: String = addresses[0].adminArea
+            // Get Street name, city and state
+            val address: String = addresses[0].thoroughfare
+            val city: String = addresses[0].locality
+            val neighborhood: String = addresses[0].subLocality
+            val state: String = addresses[0].adminArea
 
-        etStreetName.setText(address)
-        etCity.setText(city)
-        etState.setText(state)
-        etNeighborhood.setText(neighborhood)
+            etStreetName.setText(address)
+            etCity.setText(city)
+            etState.setText(state)
+            etNeighborhood.setText(neighborhood)
 
-        // You can now create a LatLng Object for use with maps
-        val latLng = LatLng(location.getLatitude(), location.getLongitude())
+            // You can now create a LatLng Object for use with maps
+            val latLng = LatLng(location.getLatitude(), location.getLongitude())
+        }catch (e: Exception){
+            Toast.makeText(this, "Localização não obtida! Verifique sua conexão e GPS!", Toast.LENGTH_LONG).show()
+        }
+
+
     }
 
 

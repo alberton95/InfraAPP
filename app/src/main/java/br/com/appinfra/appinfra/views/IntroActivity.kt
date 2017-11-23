@@ -6,8 +6,8 @@ import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import br.com.appinfra.appinfra.R
-import br.com.appinfra.appinfra.data.SPInfo
-import br.com.appinfra.appinfra.fragment.TermsConditionsSlide
+import br.com.appinfra.appinfra.models.data.SPInfo
+import br.com.appinfra.appinfra.views.fragment.TermsConditionsSlide
 
 
 class IntroActivity : MaterialIntroActivity() {
@@ -27,8 +27,7 @@ class IntroActivity : MaterialIntroActivity() {
 
         // Slide 1 - Persmissão de GPS
         val neededPermissions = arrayOf(
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.ACCESS_COARSE_LOCATION)
+                Manifest.permission.ACCESS_FINE_LOCATION)
         addSlide(
             SlideFragmentBuilder()
                 .backgroundColor(R.color.slide_2)

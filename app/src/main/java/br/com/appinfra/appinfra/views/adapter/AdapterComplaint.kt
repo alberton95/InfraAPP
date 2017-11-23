@@ -1,4 +1,4 @@
-package br.com.appinfra.appinfra.adapter
+package br.com.appinfra.appinfra.views.adapter
 
 import android.content.Context
 import android.graphics.Color

@@ -1,4 +1,4 @@
-package br.com.appinfra.appinfra.fragment
+package br.com.appinfra.appinfra.views.fragment
 
 import agency.tango.materialintroscreen.SlideFragment
 import android.content.Intent
@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import br.com.appinfra.appinfra.views.LoginActivity
 import br.com.appinfra.appinfra.R
-import br.com.appinfra.appinfra.data.SPInfo
+import br.com.appinfra.appinfra.models.data.SPInfo
 import kotlinx.android.synthetic.main.fragment_terms_conditions_slide.*
 
 

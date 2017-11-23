@@ -1,4 +1,4 @@
-package br.com.appinfra.appinfra.data
+package br.com.appinfra.appinfra.models.data
 
 import android.content.Context
 

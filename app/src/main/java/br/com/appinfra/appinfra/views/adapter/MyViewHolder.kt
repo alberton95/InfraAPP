@@ -1,4 +1,4 @@
-package br.com.appinfra.appinfra.adapter
+package br.com.appinfra.appinfra.views.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.View

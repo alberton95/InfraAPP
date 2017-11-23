@@ -13,7 +13,7 @@ class FirebaseHelper(internal var db: DatabaseReference) {
     internal var saved: Boolean? = null
     internal var Complaints = ArrayList<Complaint>()
 
-    //WRITE IF NOT NULL
+    // Save Complaint
     fun save(Complaint: Complaint?): Boolean? {
         if (Complaint == null) {
             saved = false
@@ -25,43 +25,52 @@ class FirebaseHelper(internal var db: DatabaseReference) {
                 e.printStackTrace()
                 saved = false
             }
-
         }
         return saved
     }
 
-    //IMPLEMENT FETCH DATA AND FILL ARRAYLIST
-    fun fetchData(dataSnapshot: DataSnapshot): ArrayList<Complaint> {
-        Complaints.clear()
-        for (ds in dataSnapshot.children) {
-            val Complaint = ds.getValue(Complaint::class.java)
-            if (Complaint != null) {
-                Complaints.add(Complaint)
-            }
-        }
-        return Complaints
-    }
-
-
-
-    //READ BY HOOKING ONTO DATABASE OPERATION CALLBACKS
+    // Read Complaints in Firebase
     fun retrieve(): ArrayList<Complaint> {
 
         db.addChildEventListener(object : ChildEventListener {
 
             override fun onChildAdded(dataSnapshot: DataSnapshot, s: String?) {
-                fetchData(dataSnapshot)
+                Complaints.clear()
+                for (ds in dataSnapshot.children) {
+                    val Complaint = ds.getValue(Complaint::class.java)
+                    if (Complaint != null) {
+                        Complaints.add(Complaint)
+                    }
+                }
             }
 
             override fun onChildChanged(dataSnapshot: DataSnapshot, s: String?) {
-                fetchData(dataSnapshot)
+                Complaints.clear()
+                for (ds in dataSnapshot.children) {
+                    val Complaint = ds.getValue(Complaint::class.java)
+                    if (Complaint != null) {
+                        Complaints.add(Complaint)
+                    }
+                }
             }
 
             override fun onChildRemoved(dataSnapshot: DataSnapshot) {
-                fetchData(dataSnapshot)
+                Complaints.clear()
+                for (ds in dataSnapshot.children) {
+                    val Complaint = ds.getValue(Complaint::class.java)
+                    if (Complaint != null) {
+                        Complaints.add(Complaint)
+                    }
+                }
             }
             override fun onChildMoved(dataSnapshot: DataSnapshot, s: String?) {
-                fetchData(dataSnapshot)
+                Complaints.clear()
+                for (ds in dataSnapshot.children) {
+                    val Complaint = ds.getValue(Complaint::class.java)
+                    if (Complaint != null) {
+                        Complaints.add(Complaint)
+                    }
+                }
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         })

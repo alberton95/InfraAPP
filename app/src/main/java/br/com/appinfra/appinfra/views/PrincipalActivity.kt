@@ -15,6 +15,7 @@ import android.support.design.widget.NavigationView
 import android.support.v4.content.LocalBroadcastManager
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
+import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.app.NotificationCompat
@@ -28,17 +29,16 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import br.com.appinfra.appinfra.R
-import br.com.appinfra.appinfra.adapter.AdapterComplaint
 import br.com.appinfra.appinfra.models.FirebaseServices.FirebaseHelper
 import br.com.appinfra.appinfra.models.beans.Complaint
 import br.com.appinfra.appinfra.models.models.beans.Config.Config
+import br.com.appinfra.appinfra.views.adapter.AdapterComplaint
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.content_principal.*
 
 class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    lateinit var db: DatabaseReference
     lateinit var helper: FirebaseHelper
     lateinit var adapter: AdapterComplaint
     lateinit var rv: RecyclerView
@@ -60,9 +60,9 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         setContentView(R.layout.activity_principal2)
 
         // Initialize Push Notifications Firebase
-        mRegistrationBroadcastReceiver = object:BroadcastReceiver(){
+        mRegistrationBroadcastReceiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context?, intent: Intent) {
-                if(intent.action == Config.STR_PUSH){
+                if (intent.action == Config.STR_PUSH) {
                     val message = intent.getStringExtra("message")
                     showNotification("InfraAPP", message)
                 }
@@ -72,10 +72,11 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         initilizeFirebase()
         initializeRecyclerView()
+        refreshDataFirebase()
 
         // Action Floating Button
         val fab = findViewById(R.id.fab) as FloatingActionButton
-        fab.setOnClickListener { displayInputDialog() }
+        fab.setOnClickListener { insertComplaint() }
 
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
@@ -88,11 +89,22 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         val navigationView = findViewById(R.id.nav_view) as NavigationView
         navigationView.setNavigationItemSelectedListener(this)
+
+        val swiperefesh = findViewById(R.id.swiperefresh) as SwipeRefreshLayout
+
+        swiperefresh.setOnRefreshListener( object: SwipeRefreshLayout.OnRefreshListener{
+        override fun onRefresh() {
+            refreshDataFirebase()
+            swiperefesh.setRefreshing(false);
+        }
+    }
+);
+
     }
 
     private fun initilizeFirebase() {
         // Initiliaze Firebase
-        db = FirebaseDatabase.getInstance().reference
+        val db = FirebaseDatabase.getInstance().reference
         helper = FirebaseHelper(db)
     }
 
@@ -101,12 +113,17 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         // Initialize RecyclerView
         rv = findViewById(R.id.rv_questions) as RecyclerView
         rv.layoutManager = LinearLayoutManager(this)
+        refreshDataFirebase()
 
-        // Initialize Adapter
+    }
+
+    fun refreshDataFirebase(){
+        // Refresh Data Firease and Initialize Adapter
         adapter = AdapterComplaint(this, helper.retrieve())
         rv.adapter = adapter
     }
 
+    // Show Notifications Push Firebase
     private fun showNotification(title: String, message: String?) {
         val intent = Intent(applicationContext, PrincipalActivity::class.java)
         val contentIntent = PendingIntent.getActivity(applicationContext, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
@@ -226,7 +243,7 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         d.show()
     }
 
-    fun logout(view: View){
+    fun logout(view: View) {
 
         try {
             FirebaseAuth.getInstance().signOut()
@@ -234,13 +251,13 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             val editor = preferences.edit()
             editor.clear()
             editor.commit()
-            activityLoguin ()
-        }catch (e: Exception){
+            activityLoguin()
+        } catch (e: Exception) {
         }
 
     }
 
-    fun activityLoguin () {
+    fun activityLoguin() {
         val changePage = Intent(this, LoginActivity::class.java)
         startActivity(changePage)
     }

@@ -30,7 +30,6 @@ class InsertImageActivity : AppCompatActivity() {
     private lateinit var bitmap: Bitmap
     lateinit var helper: FirebaseHelper
     internal var storage: FirebaseStorage? = null
-    private val mProgress: ProgressDialog? = null
     lateinit var mDatabase: DatabaseReference
     internal var storageReference: StorageReference? = null
 

@@ -5,11 +5,11 @@ package br.com.appinfra.appinfra.models.beans
  */
 
 class Complaint {
-    lateinit var title: String
-    lateinit var description: String
-    lateinit var city: String
-    lateinit var neighborhood: String
-    lateinit var adress: String
-    lateinit var status: String
-    lateinit var image: String
+    var title: String = ""
+    var description: String = ""
+    var city: String = ""
+    var neighborhood: String = ""
+    var adress: String = ""
+    var status: String = ""
+    var image: String = ""
 }
