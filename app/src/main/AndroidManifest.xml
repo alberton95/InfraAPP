@@ -57,8 +57,6 @@
 
         <activity android:name=".views.InsertImageActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".views.InsertLocationActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".views.InsertDescriptionActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <!--

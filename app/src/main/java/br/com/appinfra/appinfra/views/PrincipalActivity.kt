@@ -24,11 +24,15 @@ import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.TextView
+import android.widget.Toast
 import br.com.appinfra.appinfra.R
 import br.com.appinfra.appinfra.models.FirebaseServices.FirebaseHelper
+import br.com.appinfra.appinfra.models.Util.CheckConn
 import br.com.appinfra.appinfra.models.models.beans.Config.Config
 import br.com.appinfra.appinfra.views.adapter.AdapterComplaint
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.content_principal.*
 
@@ -38,7 +42,6 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     lateinit var adapter: AdapterComplaint
     lateinit var rv: RecyclerView
     var mRegistrationBroadcastReceiver: BroadcastReceiver? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,15 +75,32 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         drawer.setDrawerListener(toggle)
         toggle.syncState()
 
+        // Get navigation view and set name user
         val navigationView = findViewById(R.id.nav_view) as NavigationView
         navigationView.setNavigationItemSelectedListener(this)
+        var header: View = navigationView!!.getHeaderView(0);
+        var tvUser = header.findViewById(R.id.tvUser) as TextView
+        var user: FirebaseUser? = FirebaseAuth.getInstance().getCurrentUser();
+        if(user != null){
+            tvUser.text = user.email;
+        }else{
+            tvUser.text = "Usuário"
+        }
+
 
         val swiperefesh = findViewById(R.id.swiperefresh) as SwipeRefreshLayout
 
         swiperefresh.setOnRefreshListener(object : SwipeRefreshLayout.OnRefreshListener {
             override fun onRefresh() {
-                refreshDataFirebase()
-                swiperefesh.setRefreshing(false);
+                if (CheckConn.verifyConnection(this@PrincipalActivity)) {
+                    refreshDataFirebase()
+                    swiperefesh.setRefreshing(false);
+                } else {
+                    Toast.makeText(this@PrincipalActivity, "Não foi possivel recarregar! Verifique sua conexão.", Toast.LENGTH_SHORT).show()
+                    swiperefesh.setRefreshing(false);
+                }
+
+
             }
         }
         );

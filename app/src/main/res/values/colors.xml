@@ -4,6 +4,7 @@
     <color name="colorPrimary">#0076b0</color>
     <color name="colorPrimaryDark">#005f8e</color>
     <color name="colorAccent">#17579e</color>
+    <color name="bgNavDrawer">#19191b</color>
 
     <!-- Cores do Slide de Permissões -->
     <color name="slide_button">#66000000</color>

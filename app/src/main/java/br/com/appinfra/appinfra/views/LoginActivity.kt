@@ -51,7 +51,6 @@ class LoginActivity : AppCompatActivity() {
         if (mPrefs.getBoolean("conectado", false)) {
             val i = Intent(this, PrincipalActivity::class.java)
             startActivity(i)
-            finish()
         } else {
         }
     }
@@ -67,8 +66,9 @@ class LoginActivity : AppCompatActivity() {
                     progress.show()
                     sharedPref()
                     activityIndex()
+                    finish()
                 }else{
-                    showMessage(view,"E-mail ou senha inválidos!")
+                    showMessage(view,"Algo deu errado! Verifique os dados e sua conexão!")
                 }
             })
         }else{
@@ -93,7 +93,7 @@ class LoginActivity : AppCompatActivity() {
 
     // Show Message Error Loguin
     fun showMessage(view:View, message: String){
-        Snackbar.make(view, message, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
+        Snackbar.make(view, message, Snackbar.LENGTH_LONG).setAction("Action", null).show()
     }
 
 
