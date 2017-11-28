@@ -2,7 +2,6 @@ package br.com.appinfra.appinfra.models.data
 
 import android.content.Context
 
-
 class SPInfo(val context : Context) {
 
     // Checagem de Permissões

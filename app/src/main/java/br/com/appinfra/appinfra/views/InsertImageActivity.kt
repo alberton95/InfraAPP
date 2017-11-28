@@ -6,7 +6,6 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
@@ -43,6 +42,7 @@ class InsertImageActivity : AppCompatActivity() {
         mDatabase = FirebaseDatabase.getInstance().reference
         helper = FirebaseHelper(mDatabase)
 
+        // Action Button Send Complaint
         btSendComplaint.setOnClickListener {
 
             val it = intent
@@ -65,11 +65,12 @@ class InsertImageActivity : AppCompatActivity() {
 
             startActivity(it)
 
-            // Save Data
+            // Check and Save Data
             if (s != null) {
                 if (helper.save(s)!!) {
                     val changePage = Intent(this, PrincipalActivity::class.java)
                     startActivity(changePage)
+                    finish()
                     Toast.makeText(this, "Reclamação enviada com sucesso!", Toast.LENGTH_LONG).show()
                 }
             } else {
@@ -84,11 +85,13 @@ class InsertImageActivity : AppCompatActivity() {
         bitmap = b
     }
 
-    fun callCamera(v: View) {
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(intent, CAMERA)
-    }
+    // Capture Images from Camera
+//    fun callCamera(v: View) {
+//        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//        startActivityForResult(intent, CAMERA)
+//    }
 
+    // Call Images from Galery
     fun callGallery(v: View) {
         val intent = Intent()
         intent.type = "image/*"
@@ -96,6 +99,7 @@ class InsertImageActivity : AppCompatActivity() {
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), GALLERY)
     }
 
+    // Method Return Image Camera and Gallery
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -127,6 +131,7 @@ class InsertImageActivity : AppCompatActivity() {
 //        return filePath
 //    }
 
+    // Upload Image in Firebase and Get URL
     private fun uploadImage(filePath: Uri) {
 
         if (filePath != null) {
@@ -157,9 +162,5 @@ class InsertImageActivity : AppCompatActivity() {
 
     }
 
-    fun sendImage(v: View) {
-        val changePage = Intent(this, PrincipalActivity::class.java)
-        startActivity(changePage)
-    }
 
 }

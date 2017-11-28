@@ -4,6 +4,7 @@ package br.com.appinfra.appinfra.models.beans
  * Created by alber on 17/11/2017.
  */
 
+// Entity Complaint
 class Complaint {
     var title: String = ""
     var description: String = ""

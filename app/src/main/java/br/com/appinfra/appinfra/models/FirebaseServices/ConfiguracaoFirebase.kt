@@ -7,6 +7,8 @@ import com.google.firebase.database.FirebaseDatabase
 /**
  * Created by alber on 16/11/2017.
  */
+
+// Class Firebase - Get References and Intance
 class ConfiguracaoFirebase {
 
     companion object {

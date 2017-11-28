@@ -9,6 +9,7 @@ import br.com.appinfra.appinfra.R
 
 class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+    // Initialize Components Interface
     var tvTitle: TextView
     var tvCity: TextView
     var tvNeighborhood: TextView

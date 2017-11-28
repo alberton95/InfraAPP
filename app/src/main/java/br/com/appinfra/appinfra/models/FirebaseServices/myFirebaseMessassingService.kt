@@ -9,6 +9,8 @@ import com.google.firebase.messaging.RemoteMessage
 /**
  * Created by alber on 20/10/2017.
  */
+
+// Class Receiver Messages
 class myFirebaseMessassingService:FirebaseMessagingService() {
 
     override fun onMessageReceived(remoteMessage: RemoteMessage?) {

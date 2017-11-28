@@ -13,7 +13,7 @@ class CadastroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_cadastro)
     }
 
-    // Método de passar tela Loguin para a tela Principal
+    // Method Login
     fun login (view: View) {
         val changePage = Intent(this, LoginActivity::class.java)
         startActivity(changePage)

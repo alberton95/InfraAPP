@@ -8,6 +8,7 @@ import java.util.*
  * Created by alber on 17/11/2017.
  */
 
+// Class Functions Complaints Firebase
 class FirebaseHelper(internal var db: DatabaseReference) {
 
     internal var saved: Boolean? = null
@@ -39,7 +40,7 @@ class FirebaseHelper(internal var db: DatabaseReference) {
                 for (ds in dataSnapshot.children) {
                     val Complaint = ds.getValue(Complaint::class.java)
                     if (Complaint != null) {
-                        Complaints.add(Complaint)
+                        Complaints.add(0,Complaint)
                     }
                 }
             }

@@ -6,6 +6,8 @@ import com.google.firebase.database.FirebaseDatabase
 /**
  * Created by alber on 23/11/2017.
  */
+
+// Class Persistence in Cache Data Application
 class PersistenceCache : Application() {
 
     // Initialize Persistence Cache Firebase

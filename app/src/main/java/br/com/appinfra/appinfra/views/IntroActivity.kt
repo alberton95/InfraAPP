@@ -15,17 +15,17 @@ class IntroActivity : MaterialIntroActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Método de Verificar Permissões
+        // Method Check Permissions
         verificaPermissoes()
 
-        // Método de Transição de Slides
+        // Method Transition Slides
         backButtonTranslationWrapper
             .setEnterTranslation {
                 view, percentage -> view.alpha = percentage * 5
             }
 
 
-        // Slide 1 - Persmissão de GPS
+        // Slide 1 - Check Permission Location
         val neededPermissions = arrayOf(
                 Manifest.permission.ACCESS_FINE_LOCATION)
         addSlide(
@@ -39,7 +39,7 @@ class IntroActivity : MaterialIntroActivity() {
                 .build()
         )
 
-        // Slide 1 - Persmissão de Câmera
+        // Slide 2 - Check Permission Camera
         val possiblePermissions = arrayOf( Manifest.permission.CAMERA)
         addSlide(
             SlideFragmentBuilder()
@@ -55,14 +55,13 @@ class IntroActivity : MaterialIntroActivity() {
         addSlide( TermsConditionsSlide() )
     }
 
-
-    // Verifica se as permissões estão habilitadas
-    // Não - Tela de habilitar permissões
-    // Sim - Joga para a tela de Loguin
+    // Check Permissions OK
+    // Not - Activity - Enable Permissions
+    // Yes - Activity Main
     private fun verificaPermissoes(){
         if( SPInfo(this).isIntroShown()){
             startActivity(
-                Intent(this, LoginActivity::class.java)
+                Intent(this, PrincipalActivity::class.java)
             )
             finish()
         }

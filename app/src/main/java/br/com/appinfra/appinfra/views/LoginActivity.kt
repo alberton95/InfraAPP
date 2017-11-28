@@ -21,36 +21,42 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        // Check Login Firebase
         checkloguin()
+
+        // Action Button Send Loguin
         btEnviar.setOnClickListener {view ->
             signIn(view,etUsuario.text.toString(), etSenha.text.toString())
         }
     }
 
-    // Método de passar tela : Loguin - Cadastro
+    // Method Transition Activity - Login > Register
     fun activityRegister (v: View) {
         val changePage = Intent(this, CadastroActivity::class.java)
         startActivity(changePage)
     }
 
-    // Método de passar tela : Loguin - Principal
+    // Method Transition Activity - Login > Main
     fun activityIndex () {
         val changePage = Intent(this, PrincipalActivity::class.java)
         startActivity(changePage)
     }
 
-
+    // Method Check Loguin in Firebase and Shared Preferences
     fun checkloguin(){
         FirebaseAuth.getInstance()
         // other setup code
         val mPrefs = PreferenceManager.getDefaultSharedPreferences(this)
         if (mPrefs.getBoolean("conectado", false)) {
-            val i = Intent(this, MapsActivity::class.java)
+            val i = Intent(this, PrincipalActivity::class.java)
             startActivity(i)
+            finish()
         } else {
         }
     }
 
+    // Method Enter
     fun signIn(view: View,usuario: String, senha: String){
 
         if(etUsuario.text.toString().isNotEmpty() && etSenha.text.toString().isNotEmpty()){
@@ -71,6 +77,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
+    // Method Checkbox Keep Connected
     fun sharedPref(){
 
         if(cbManterConectado.isChecked == true){
@@ -84,6 +91,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    // Show Message Error Loguin
     fun showMessage(view:View, message: String){
         Snackbar.make(view, message, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
     }

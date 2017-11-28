@@ -7,6 +7,8 @@ import com.google.firebase.iid.FirebaseInstanceIdService
 /**
  * Created by alber on 20/10/2017.
  */
+
+// Class Firebase Token Messages
 class myFirebaseIdService: FirebaseInstanceIdService() {
 
     override fun onTokenRefresh() {

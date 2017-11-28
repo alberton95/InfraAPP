@@ -71,7 +71,6 @@
             android:layout_marginTop="20dp"
             android:background="@color/colorPrimary"
             android:textColor="@color/btTextEnviar"
-            android:onClick="sendImage"
             android:text="ENVIAR!" />
 
     </LinearLayout>
